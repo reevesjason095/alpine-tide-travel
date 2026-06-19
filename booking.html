@@ -1,0 +1,137 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - AlpineTideTravel</title>
+    <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
+                <defs>
+                    <linearGradient id="oceanGradBooking" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#023e8a"/>
+                        <stop offset="55%" stop-color="#00b4d8"/>
+                        <stop offset="100%" stop-color="#90e0ef"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="32" cy="32" r="31" fill="url(#oceanGradBooking)"></circle>
+                <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
+                <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
+            </svg>
+            AlpineTideTravel
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="index.html#quote-anchor">Request Quote</a></li>
+            <li>
+                <a href="https://www.youtube.com/@oceanapex" target="_blank" rel="noopener noreferrer nofollow" class="youtube-link" referrerpolicy="no-referrer">
+                    <i class="fa-brands fa-youtube"></i> YouTube
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="site-header">
+        <hr class="main">
+        <h1 class="title">
+            <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
+                <defs>
+                    <linearGradient id="oceanGradTitleBooking" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#023e8a"/>
+                        <stop offset="55%" stop-color="#00b4d8"/>
+                        <stop offset="100%" stop-color="#90e0ef"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="32" cy="32" r="31" fill="url(#oceanGradTitleBooking)"></circle>
+                <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
+                <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
+            </svg>
+            Book Your Cruise
+        </h1>
+        <hr class="main">
+        <p class="subtitle">Find sailings and reserve your next getaway</p>
+    </header>
+
+    <section class="booking-section booking-page-section">
+        <div class="booking-header">
+            <span class="booking-badge"><i class="fa-solid fa-shield-heart"></i> Partner Booking Engine</span>
+            <h2 class="booking-title">Search and Book Through Outside Agents</h2>
+            <p class="booking-subtitle">
+                Our booking experience is provided through our trusted travel partner, Outside Agents.
+            </p>
+            <p class="booking-disclaimer">
+                You’ll be taken to a secure partner booking engine to browse sailings and complete your reservation.
+            </p>
+
+            <a class="booking-link-btn" href="https://oceanapextravels.cruisebrothers.com/cb/booking_engine_iframe/" target="_blank" rel="noopener noreferrer">
+                Open Booking Engine
+            </a>
+        </div>
+
+        <div class="booking">
+           <iframe
+                width="100%"
+                height="200"
+                src="https://oceanapextravels.cruisebrothers.com/cb/booking_engine_iframe/"
+                title="AlpineTideTravel booking engine"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <section class="destination-cards-section">
+        <div class="section-label">Dream Destinations</div>
+        <h2 class="gallery-title">Explore Popular Cruise Spots</h2>
+        <p class="gallery-subtitle">A few favorites with fun facts, highlights, and things to do.</p>
+
+        <div class="destination-card-grid">
+            <article class="destination-card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60" alt="Caribbean beach and ocean view">
+                <div class="destination-card-content">
+                    <h3>Caribbean</h3>
+                    <p><strong>Fun fact:</strong> The Caribbean is made up of more than 7,000 islands, reefs, and cays.</p>
+                    <p><strong>Do this:</strong> Snorkeling, beach hopping, rum tasting, and sunset catamaran cruises.</p>
+                </div>
+            </article>
+
+            <article class="destination-card">
+                <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800&auto=format&fit=crop&q=60" alt="Alaska mountains and water">
+                <div class="destination-card-content">
+                    <h3>Alaska</h3>
+                    <p><strong>Fun fact:</strong> Alaska has some of the largest glaciers in North America.</p>
+                    <p><strong>Do this:</strong> Whale watching, glacier tours, wildlife spotting, and scenic rail trips.</p>
+                </div>
+            </article>
+
+            <article class="destination-card">
+                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&auto=format&fit=crop&q=60" alt="Mediterranean coastline">
+                <div class="destination-card-content">
+                    <h3>Mediterranean</h3>
+                    <p><strong>Fun fact:</strong> Cruises here can visit multiple countries in one trip.</p>
+                    <p><strong>Do this:</strong> Historic tours, local food tastings, island exploring, and seaside shopping.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
