@@ -213,6 +213,91 @@ hr.main {
     border-top: 1px solid #d8eef2;
 }
 
+.inquiry-container {
+    width: min(900px, 92%);
+    margin: 40px auto 60px;
+    padding: 32px 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #f3fbfd 100%);
+    border: 1px solid #cfe8ee;
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(0, 95, 115, 0.08);
+    text-align: left;
+}
+
+.inquiry-container h2 {
+    margin: 0 0 10px;
+    color: #023e8a;
+    text-align: center;
+}
+
+.inquiry-container p {
+    margin: 0 auto 24px;
+    max-width: 720px;
+    color: #4e5b63;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.form-group-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.inquiry-container label {
+    display: block;
+    margin: 0 0 6px;
+    font-weight: 600;
+    color: #17324d;
+}
+
+.inquiry-container input,
+.inquiry-container select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #b7dbe4;
+    border-radius: 12px;
+    background: #fdfefe;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inquiry-container input:focus,
+.inquiry-container select:focus {
+    border-color: #0a9396;
+    box-shadow: 0 0 0 3px rgba(10, 147, 150, 0.15);
+}
+
+.hidden {
+    display: none;
+}
+
+.submit-btn {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #0a9396 0%, #0077b6 100%);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 119, 182, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 119, 182, 0.24);
+}
+
 .booking-inquiry-section {
     width: min(900px, 92%);
     margin: 40px auto 60px;
@@ -390,11 +475,16 @@ hr.main {
   }
 
   .booking-inquiry-section, 
-  .countdown-card {
+  .countdown-card,
+  .inquiry-container {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
     padding: 20px 15px;
+  }
+
+  .form-group-row {
+    grid-template-columns: 1fr;
   }
 
   .tagline {
