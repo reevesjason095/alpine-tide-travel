@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry - AlpineTideTravel</title>
+    <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html" class="brand-link" aria-label="Go to home">
+                <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
+                    <defs>
+                        <linearGradient id="oceanGradInquiry" x1="0%" y1="0%" y2="100%" x2="100%">
+                            <stop offset="0%" stop-color="#023e8a"/>
+                            <stop offset="55%" stop-color="#00b4d8"/>
+                            <stop offset="100%" stop-color="#90e0ef"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="32" cy="32" r="31" fill="url(#oceanGradInquiry)"></circle>
+                    <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
+                    <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
+                </svg>
+                <h1>AlpineTideTravel</h1>
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+    </nav>
+
+    <header class="site-header">
+        <hr class="main">
+        <h1 class="title">Inquiry</h1>
+        <p class="subtitle">Tell us about your trip and we’ll get back to you.</p>
+        <hr class="main">
+    </header>
+
+    <section class="inquiry-container">
+        <h2>Design Your Escape</h2>
+        <p>Whether you seek the peaks or the palms, let us build your perfect itinerary.</p>
+
+        <form id="travelInquiryForm" name="alpine-tide-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="alpine-tide-inquiry">
+            <p class="hidden">
+                <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+            </p>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" id="emailAddress" name="email" required placeholder="john@example.com">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="travelStyle">What type of escape are you planning?</label>
+                <select id="travelStyle" name="travel_style" required>
+                    <option value="" disabled selected>Select your vibe...</option>
+                    <option value="alpine">Alpine (Mountains & Cabins)</option>
+                    <option value="tide">Tide (Cruises & Beach Resorts)</option>
+                </select>
+            </div>
+
+            <div id="dynamicDestination" class="form-group hidden">
+                <label id="destinationLabel" for="destination">Where would you like to go?</label>
+                <input type="text" id="destination" name="destination" placeholder="">
+            </div>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="travelDate">Estimated Travel Date</label>
+                    <input type="date" id="travelDate" name="travel_date">
+                </div>
+                <div class="form-group">
+                    <label for="budgetSelect">Estimated Budget per Person</label>
+                    <select id="budgetSelect" name="budget">
+                        <option value="moderate">Moderate</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="ultra-luxury">Ultra-Luxury / Custom</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
+    </section>
+
+    <hr class="main">
+
+    <footer>
+        <p>© 2026 AlpineTideTravel<br>
+        Jason Reeves | Dallas, NC 28034</p>
+        <p class="footer-contact">Contact Us: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
+        <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
+        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2063964-50, Florida ST37113, Washington 602-232-785.</p>
+        <p id="currentTime" class="end"></p>
+        <img class="diamond" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg">
+    </footer>
+
+    <hr class="main">
+
+    <script src="script.js"></script>
+</body>
+</html>
