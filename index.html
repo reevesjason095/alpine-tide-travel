@@ -39,7 +39,7 @@
             <li><a href="#gallery-anchor">Gallery</a></li>
             <li><a href="#video-anchor">Videos</a></li>
             <li><a href="booking.html">Book Now</a></li>
-            <li><a href="#quote-anchor">Request Quote</a></li>
+            <li><a href="inquiry.html">Inquiry</a></li>
             <li><a href="#destinations-anchor">Destinations</a></li>
             <li><a href="about.html">About Us</a></li>
             <li>
@@ -137,55 +137,6 @@
                 <div class="media-caption">Mediterranean</div>
             </div>
         </div>
-    </section>
-
-    <section class="booking-inquiry-section" id="quote-anchor">
-        <h2 class="form-title">Need a More Personal Touch?</h2>
-        <p class="form-subtitle">If you’d like help choosing the right cruise, send us a message and we’ll get back to you.</p>
-
-        <form name="booking-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thankyou.html">
-            <input type="hidden" name="form-name" value="booking-inquiry">
-            <input type="hidden" name="subject" value="New Booking Inquiry from AlpineTideTravel">
-            <input type="hidden" name="redirect" value="/thankyou.html">
-            <p style="display:none;">
-                <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
-            </p>
-
-            <fieldset>
-                <legend>Contact Information</legend>
-                <label for="full-name">Full Name:</label>
-                <input type="text" id="full-name" name="client-name" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="client-email" required>
-
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="client-phone" required>
-            </fieldset>
-
-            <fieldset>
-                <legend>Trip Details</legend>
-                <label for="destination">Where do you want to go?</label>
-                <input type="text" id="destination" name="trip-destination" required>
-
-                <label for="travel-date">Preferred Departure Date:</label>
-                <input type="date" id="travel-date" name="departure-date">
-
-                <label for="travelers">Number of Travelers:</label>
-                <input type="number" id="travelers" name="number-of-travelers" min="1" value="1">
-
-                <label for="budget">Estimated Budget per Person:</label>
-                <input type="text" id="budget" name="estimated-budget" placeholder="e.g., $2,000">
-            </fieldset>
-
-            <fieldset>
-                <legend>Additional Requests</legend>
-                <label for="notes">Tell us more about your dream trip (preferred airlines, bed configurations, etc.):</label>
-                <textarea id="notes" name="trip-notes" rows="4"></textarea>
-            </fieldset>
-
-            <button type="submit">Request My Custom Quote</button>
-        </form>
     </section>
 
     <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
