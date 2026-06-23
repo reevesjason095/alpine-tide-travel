@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Inquiry - AlpineTideTravel</title>
+    <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .package-form-wrap {
+            width: min(900px, 92%);
+            margin: 40px auto 70px;
+        }
+
+        .package-form-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 95, 115, 0.08);
+            border: 1px solid #cfe8ee;
+            padding: 30px 24px;
+            text-align: left;
+        }
+
+        .package-badge {
+            display: inline-block;
+            background: #e6fbff;
+            color: #005f73;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .package-form-card h1 {
+            color: #023e8a;
+            margin: 0 0 10px;
+        }
+
+        .package-form-card p {
+            color: #4e5b63;
+            line-height: 1.7;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 14px;
+            border: 1px solid #cfe8ee;
+            border-radius: 12px;
+            font: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            margin-top: 18px;
+            background: linear-gradient(135deg, #0a9396 0%, #0077b6 100%);
+            color: #fff;
+            border: 0;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: #023e8a;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media screen and (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html" class="brand-link" aria-label="Go to home">
+                <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
+                    <defs>
+                        <linearGradient id="oceanGradPkg" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#023e8a"/>
+                            <stop offset="55%" stop-color="#00b4d8"/>
+                            <stop offset="100%" stop-color="#90e0ef"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="32" cy="32" r="31" fill="url(#oceanGradPkg)"></circle>
+                    <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
+                    <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
+                </svg>
+                <h1>AlpineTideTravel</h1>
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+    </nav>
+
+    <header class="site-header">
+        <hr class="main">
+        <h1 class="title" id="packageTitle">Package Inquiry</h1>
+        <p class="subtitle" id="packageSubtitle">Tell us about your trip and we’ll get back to you.</p>
+        <hr class="main">
+    </header>
+
+    <main class="package-form-wrap">
+        <section class="package-form-card">
+            <div class="package-badge" id="packageBadge">Inquiry Form</div>
+            <p id="packageIntro">Please complete the form below.</p>
+
+            <form id="packageInquiryForm" name="package-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="package-inquiry">
+                <input type="hidden" name="package_type" id="packageType" value="">
+
+                <p class="hidden">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                </p>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" name="email" required>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="destination">Preferred Destination / Details</label>
+                        <textarea id="destination" name="destination" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="travelDate">Estimated Travel Date</label>
+                        <input type="date" id="travelDate" name="travel_date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budgetSelect">Estimated Budget per Person</label>
+                        <select id="budgetSelect" name="budget">
+                            <option value="moderate">Moderate</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="ultra-luxury">Ultra-Luxury / Custom</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" name="notes" placeholder="Tell us what you want included, who is traveling, cabin preferences, etc."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </section>
+    </main>
+
+    <hr class="main">
+
+    <footer>
+        <p>© 2026 AlpineTideTravel<br>
+        Jason Reeves | Dallas, NC 28034</p>
+        <p class="footer-contact">Contact Us: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
+        <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
+        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
+        <p id="currentTime" class="end"></p>
+        <div class="footer-logos">
+            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Carnival logo">
+            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Commodore insignia logo">
+        </div>
+    </footer>
+
+    <script>
+        const packageData = {
+            alpine: {
+                title: "Alpine Escape Inquiry",
+                badge: "Alpine Package",
+                intro: "Tell us what you want for your Smoky Mountain luxury cabin retreat.",
+                subtitle: "Request details for the Alpine package."
+            },
+            tide: {
+                title: "Tide Escape Inquiry",
+                badge: "Tide Package",
+                intro: "Tell us what you want for your Myrtle Beach golf and shore getaway.",
+                subtitle: "Request details for the Tide package."
+            },
+            "surf-turf": {
+                title: "Surf and Turf Inquiry",
+                badge: "Surf and Turf Package",
+                intro: "Tell us what you want for your Orlando & Jacksonville sunshine special.",
+                subtitle: "Request details for the Surf and Turf package."
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const pkg = params.get("package") || "alpine";
+        const data = packageData[pkg] || packageData.alpine;
+
+        document.getElementById("packageTitle").textContent = data.title;
+        document.getElementById("packageBadge").textContent = data.badge;
+        document.getElementById("packageIntro").textContent = data.intro;
+        document.getElementById("packageSubtitle").textContent = data.subtitle;
+        document.getElementById("packageType").value = pkg;
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
