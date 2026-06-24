@@ -1,24 +1,35 @@
-// 1. Target date: August 23, 2026 at 11:00 AM Eastern Time
+// Target date: August 23, 2026 at 11:00 AM Eastern Time
 const cruiseDate = new Date("2026-08-23T11:00:00-04:00");
 
 function updateCountdown() {
     const timerElement = document.getElementById("timer");
-    if (!timerElement) return;
+    const marqueeElement = document.getElementById("countdownMarqueeText");
 
     const now = new Date();
     const difference = cruiseDate - now;
 
+    let message = "";
+
     if (difference <= 0) {
-        timerElement.innerHTML = "Welcome aboard, happy sailing!";
-        return;
+        message = "Countdown complete - sailing day is here!";
+        if (timerElement) {
+            timerElement.textContent = message;
+        }
+    } else {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        message = `${days}d ${hours}h ${minutes}m ${seconds}s until Caribbean Princess departure`;
+
+        if (timerElement) {
+            timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
     }
 
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-    timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    if (marqueeElement) {
+        marqueeElement.textContent = message;
+    }
 }
 
 function updateLocalClock() {
