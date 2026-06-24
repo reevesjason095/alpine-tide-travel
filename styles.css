@@ -17,6 +17,39 @@ video {
     height: auto;
 }
 
+.countdown-marquee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: #023e8a;
+    color: #fff;
+    z-index: 1300;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #00b4d8;
+}
+
+.countdown-marquee-track {
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 100%;
+    animation: marqueeScroll 18s linear infinite;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -24,7 +57,7 @@ video {
     gap: 16px;
     padding: 12px 24px;
     position: fixed;
-    top: 0;
+    top: 36px;
     left: 0;
     right: 0;
     width: 100%;
@@ -142,6 +175,7 @@ footer {
 
     .navbar {
         padding: 10px 14px;
+        top: 36px;
     }
 
     .nav-brand {
@@ -187,7 +221,7 @@ footer {
         height: 100vh;
         padding: 80px 20px 20px;
         position: fixed;
-        top: 0;
+        top: 36px;
         right: 0;
         background: #2aa2b9;
         box-shadow: -8px 0 20px rgba(0, 0, 0, 0.2);
