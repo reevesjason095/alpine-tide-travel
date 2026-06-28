@@ -35,25 +35,25 @@
 
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
-            <li><a href="booking.html">Book Now</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#blog-anchor">Blog</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
         </ul>
     </nav>
 
     <header class="site-header">
         <hr class="main">
-        <h1 class="title">Inquiry</h1>
-        <p class="subtitle">Tell us about your trip and we’ll get back to you.</p>
+        <h1 class="title">General Inquiry</h1>
+        <p class="subtitle">Tell us about your trip, blog idea, pictures, or videos and we’ll get back to you.</p>
         <hr class="main">
     </header>
 
     <section class="inquiry-container">
-        <h2>Design Your Escape</h2>
-        <p>Whether you seek the peaks or the palms, let us build your perfect itinerary.</p>
+        <h2>Contact Me</h2>
+        <p>Use this form for cruise questions, travel planning, photo submissions, video ideas, or blog suggestions.</p>
 
-        <form id="travelInquiryForm" name="alpine-tide-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="alpine-tide-inquiry">
+        <form id="travelInquiryForm" name="general-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="general-inquiry">
             <p class="hidden">
                 <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
             </p>
@@ -70,17 +70,13 @@
             </div>
 
             <div class="form-group">
-                <label for="travelStyle">What type of escape are you planning?</label>
-                <select id="travelStyle" name="travel_style" required>
-                    <option value="" disabled selected>Select your vibe...</option>
-                    <option value="alpine">Alpine (Mountains & Cabins)</option>
-                    <option value="tide">Tide (Cruises & Beach Resorts)</option>
-                </select>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required placeholder="How can we help?">
             </div>
 
-            <div id="dynamicDestination" class="form-group hidden">
-                <label id="destinationLabel" for="destination">Where would you like to go?</label>
-                <input type="text" id="destination" name="destination" placeholder="">
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required placeholder="Tell us about your trip, idea, or question..."></textarea>
             </div>
 
             <div class="form-group-row">
@@ -105,19 +101,16 @@
     <hr class="main">
 
     <footer>
-        <p>© 2026 Alpine Tide Travel<br>
+        <p>© 2026 AlpineTideTravel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
-        <p class="footer-notice">Alpine Tide Travel is an independent affiliate of WorldVia Travel Network.</p>
-        <p class="footer-notice sot-disclosures">WorldVia Travel Network Seller of Travel Registrations: California CST #2063964-50; Florida ST37113; Washington SOT #602-232-785.</p>
+        <p class="footer-notice">Alpine Tide Travel is an independent travel business.</p>
         <p id="currentTime" class="end"></p>
         <div class="footer-logos">
             <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Carnival logo">
             <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Commodore insignia logo">
         </div>
     </footer>
-
-    <hr class="main">
 
     <script src="script.js"></script>
 </body>
