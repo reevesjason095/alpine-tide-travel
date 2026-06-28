@@ -20,7 +20,7 @@ function updateCountdown() {
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        message = `${days}d ${hours}h ${minutes}m ${seconds}s until Caribbean Princess departure`;
+        message = `${days}d ${hours}h ${minutes}m ${seconds}s until Caribbean Princess departure, Join us for our 21st Anniversary Cruise`;
 
         if (timerElement) {
             timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
