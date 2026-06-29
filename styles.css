@@ -166,8 +166,23 @@ footer {
 
 .blog-section {
     width: min(1100px, 92%);
-    margin: 40px auto 0;
+    margin: 40px auto 48px;
     box-sizing: border-box;
+}
+
+.blog-section .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.blog-section .media-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: left;
 }
 
 .media-grid {
@@ -290,5 +305,3 @@ footer {
 .packages-section {
     display: none;
 }
-
- 
