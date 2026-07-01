@@ -13,7 +13,7 @@ body {
     padding: 0;
     text-align: center;
     background: linear-gradient(180deg, #f4f1ea 0%, #eef2ef 100%);
-    padding-top: 92px; /* Leaves room for ticker + navbar on desktop */
+    padding-top: 92px;
     padding-bottom: 60px;
     color: #3f4a45;
     box-sizing: border-box;
@@ -52,10 +52,82 @@ body {
     max-width: 100%;
 }
 
+.blog-section .media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
 
-/* ==========================================================================
-   2. COUNTDOWN MARQUEE (STICKY TICKER AT THE ABSOLUTE TOP)
-   ========================================================================== */
+.blog-section .media-card {
+    background: #ffffff;
+    border: 1px solid #cfe8ee;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 95, 115, 0.08);
+    padding: 18px;
+    text-align: left;
+}
+
+.blog-section .media-card .media-caption {
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 18px;
+    position: fixed;
+    top: 36px !important;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1200;
+    background: #fbfaf7;
+    border-bottom: 1px solid #d8ddd8;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-link h1 {
+    font-size: clamp(1rem, 1.3vw, 1.35rem);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    white-space: nowrap;
+}
+
+.menu-toggle {
+    display: none;
+}
+
 .countdown-marquee {
     position: fixed;
     top: 0;
@@ -83,59 +155,36 @@ body {
     100% { transform: translateX(-100%); }
 }
 
-
-/* ==========================================================================
-   3. NAVIGATION BAR (DESKTOP)
-   ========================================================================== */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 18px;
-    position: fixed;
-    top: 36px !important; /* Locks perfectly below the 36px desktop ticker */
-    left: 0;
-    right: 0;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 1200;
-    background: #fbfaf7;
-    border-bottom: 1px solid #d8ddd8;
-}
-/* ==========================================================================
-   4. FOOTER LOGO CONTROLS (DESKTOP)
-   ========================================================================== */
-footer img, 
+footer img,
 .footer img,
 .footer-logo {
     display: inline-block;
     vertical-align: middle;
-    width: 140px;          /* Normal size for desktop screens */
-    height: auto;          /* Maintains crisp proportions */
-    margin: 10px 15px;     /* Separates them evenly left/right instead of stacking */
+    width: 140px;
+    height: auto;
+    margin: 10px 15px;
 }
 
+@media screen and (max-width: 1024px) {
+    .blog-section .media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
-/* ==========================================================================
-   5. MOBILE RESPONSIVE LAYOUT (SCREENS 768px AND SMALLER)
-   ========================================================================== */
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 88px; /* Mobile spacing adjustment */
+        padding-top: 88px;
     }
 
-    /* Mobile Ticker size reduction */
     .countdown-marquee {
         font-size: 0.9rem;
         padding: 7px 0;
         height: 32px;
     }
 
-    /* Mobile Navbar adjustment below thinner ticker */
     .navbar {
         padding: 8px 14px;
-        top: 32px !important; 
+        top: 32px !important;
     }
 
     .nav-brand h1 {
@@ -156,16 +205,15 @@ footer img,
         z-index: 1250;
     }
 
-    /* Drawer Side Menu */
     .nav-links {
         display: flex;
         flex-direction: column;
         gap: 10px;
         width: min(84vw, 280px);
-        height: calc(100vh - 32px); 
-        padding: 70px 18px 18px;
+        height: calc(100vh - 32px);
+        padding: 18px;
         position: fixed;
-        top: 32px !important; 
+        top: 32px !important;
         right: 0;
         background: #8a9b8f;
         box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
@@ -173,6 +221,7 @@ footer img,
         transition: transform 0.3s ease;
         z-index: 1100;
         align-items: flex-start;
+        justify-content: flex-start;
         box-sizing: border-box;
         overflow-y: auto;
     }
@@ -186,7 +235,6 @@ footer img,
         font-size: 1rem;
     }
 
-    /* Layout Grids to Stacks */
     .blog-section .media-grid,
     .gallery-section .media-grid,
     .media-grid {
@@ -206,16 +254,10 @@ footer img,
         padding: 28px 12px;
     }
 
-    /* Mobile Footer adjustments to shrink giant logo sizes */
-    footer img, 
+    footer img,
     .footer img,
     .footer-logo {
-        width: 100px;        /* Scales images down gracefully on mobile viewport */
-        margin: 8px 10px;    /* Snugs them together tighter */
-    }
-}
-
-    footer {
-        padding: 12px 14px 16px;
+        width: 100px;
+        margin: 8px 10px;
     }
 }
