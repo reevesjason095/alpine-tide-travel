@@ -1,129 +1,31 @@
-body {
+/* ==========================================================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+html, body {
     max-width: 100%;
     overflow-x: hidden;
+    width: 100%;
+}
+
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
     background: linear-gradient(180deg, #f4f1ea 0%, #eef2ef 100%);
-    padding-top: 92px;
+    padding-top: 92px; /* Leaves room for ticker + navbar on desktop */
     padding-bottom: 60px;
     color: #3f4a45;
-}
-
-.countdown-marquee {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    background: #65746b;
-    color: #fff;
-    z-index: 1300;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #b7c2bb;
-    font-size: 0.92rem;
-}
-
-.countdown-marquee-track {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: marqueeScroll 18s linear infinite;
-}
-
-@keyframes marqueeScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 18px;
-    position: fixed;
-    top: 30px;
-    left: 0;
-    right: 0;
-    width: 100%;
     box-sizing: border-box;
-    z-index: 1200;
-    background: #fbfaf7;
-    border-bottom: 1px solid #d8ddd8;
 }
 
-.nav-brand h1 {
-    font-size: 1.15rem;
-    margin: 0;
-    color: #44524b;
-}
-
-.site-logo {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-}
-
-.brand-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    color: #4d5a55;
-    text-decoration: none;
-    font-size: 0.95rem;
-}
-
-.menu-toggle {
-    display: none;
-    background: transparent;
-    border: 0;
-    font-size: 1.35rem;
-    cursor: pointer;
-    color: #4d5a55;
-}
-
-.footer-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 10px auto 0;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-footer {
-    width: 100%;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-    padding: 14px 16px 18px;
-    text-align: center;
-    color: #52605a;
-    font-size: 0.95rem;
-    line-height: 1.5;
 }
 
-.footer-logo {
-    max-height: 42px;
-    width: auto;
-}
-
+/* Container limits for sections */
 .site-header,
 .gallery-section,
 .video-section,
@@ -140,34 +42,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
-}
-
-.blog-section {
-    position: relative;
-    z-index: 1;
-}
-
-.blog-section .media-grid,
-.gallery-section .media-grid,
-.media-grid {
-    display: flex;
-    gap: 18px;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-}
-
-.blog-section .media-card,
-.gallery-section .media-card,
-.media-card {
-    flex: 1 1 300px;
-    min-width: 0;
     max-width: 100%;
-    background: #fffdf9;
-    border-radius: 16px;
-    overflow: visible;
-    box-shadow: 0 8px 24px rgba(63, 74, 69, 0.08);
-    border: 1px solid #dde3dd;
 }
 
 .media-card img,
@@ -177,72 +52,141 @@ footer {
     max-width: 100%;
 }
 
-.media-card img {
-    height: auto;
-}
 
-.media-card iframe {
-    aspect-ratio: 16 / 9;
-    height: auto;
-}
-
-.media-caption {
-    padding: 16px;
-    text-align: left;
-    line-height: 1.6;
-    overflow-wrap: anywhere;
-    word-break: break-word;
+/* ==========================================================================
+   2. COUNTDOWN MARQUEE (STICKY TICKER AT THE ABSOLUTE TOP)
+   ========================================================================== */
+.countdown-marquee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1300;
+    background: linear-gradient(90deg, #023e8a, #0077b6, #00b4d8);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px 0;
+    font-weight: 700;
+    height: 36px;
     box-sizing: border-box;
 }
 
-.media-caption ul {
-    padding-left: 20px;
-    margin: 10px 0 0;
+.countdown-marquee-track {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marqueeMove 18s linear infinite;
 }
 
-.media-caption li {
-    margin-bottom: 10px;
+@keyframes marqueeMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
-.notification-banner {
-    background: #e7ece8;
-    color: #4d5a55;
+
+/* ==========================================================================
+   3. NAVIGATION BAR (DESKTOP)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 18px;
+    position: fixed;
+    top: 36px !important; /* Locks perfectly below the 36px desktop ticker */
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1200;
+    background: #fbfaf7;
+    border-bottom: 1px solid #d8ddd8;
+}
+/* ==========================================================================
+   4. FOOTER LOGO CONTROLS (DESKTOP)
+   ========================================================================== */
+footer img, 
+.footer img,
+.footer-logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 140px;          /* Normal size for desktop screens */
+    height: auto;          /* Maintains crisp proportions */
+    margin: 10px 15px;     /* Separates them evenly left/right instead of stacking */
 }
 
-.submit-btn,
-.thank-you-btn,
-.cta-btn,
-.legal-home-btn {
-    background: linear-gradient(135deg, #7a8c7b 0%, #9aa79a 100%);
-    color: #fff;
-}
 
-.about-home-btn,
-.back-link {
-    color: #6b7b72;
-}
-
-hr.main {
-    border: 0;
-    border-top: 1px solid #cfd6d0;
-    margin: 14px 0;
-}
-
+/* ==========================================================================
+   5. MOBILE RESPONSIVE LAYOUT (SCREENS 768px AND SMALLER)
+   ========================================================================== */
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 88px;
+        padding-top: 88px; /* Mobile spacing adjustment */
     }
 
+    /* Mobile Ticker size reduction */
+    .countdown-marquee {
+        font-size: 0.9rem;
+        padding: 7px 0;
+        height: 32px;
+    }
+
+    /* Mobile Navbar adjustment below thinner ticker */
     .navbar {
         padding: 8px 14px;
+        top: 32px !important; 
+    }
+
+    .nav-brand h1 {
+        font-size: 0.95rem;
+        line-height: 1.1;
+        white-space: nowrap;
+    }
+
+    .site-logo {
+        width: 32px;
+        height: 32px;
     }
 
     .menu-toggle {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        z-index: 1250;
     }
 
+    /* Drawer Side Menu */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: min(84vw, 280px);
+        height: calc(100vh - 32px); 
+        padding: 70px 18px 18px;
+        position: fixed;
+        top: 32px !important; 
+        right: 0;
+        background: #8a9b8f;
+        box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1100;
+        align-items: flex-start;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    .nav-links.show {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        color: #ffffff;
+        font-size: 1rem;
+    }
+
+    /* Layout Grids to Stacks */
     .blog-section .media-grid,
     .gallery-section .media-grid,
     .media-grid {
@@ -255,55 +199,21 @@ hr.main {
     .media-card {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        overflow: visible;
     }
 
-    .media-card img,
-    .media-card iframe {
-        width: 100%;
-        height: auto;
+    .thank-you-wrap {
+        width: min(100%, 100%);
+        padding: 28px 12px;
     }
 
-    .media-caption {
-        padding: 16px 14px 18px;
+    /* Mobile Footer adjustments to shrink giant logo sizes */
+    footer img, 
+    .footer img,
+    .footer-logo {
+        width: 100px;        /* Scales images down gracefully on mobile viewport */
+        margin: 8px 10px;    /* Snugs them together tighter */
     }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: min(84vw, 280px);
-        height: 100vh;
-        padding: 70px 18px 18px;
-        position: fixed;
-        top: 30px;
-        right: 0;
-        background: #8a9b8f;
-        box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 1100;
-        align-items: flex-start;
-        box-sizing: border-box;
-    }
-
-    .nav-links.show {
-        transform: translateX(0);
-    }
-
-    .nav-links a {
-        color: #ffffff;
-    }
-
-    .nav-brand h1 {
-        font-size: 1rem;
-    }
-
-    .site-logo {
-        width: 34px;
-        height: 34px;
-    }
+}
 
     footer {
         padding: 12px 14px 16px;
