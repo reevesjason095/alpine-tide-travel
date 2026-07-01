@@ -122,6 +122,13 @@ body {
 
 .nav-links a {
     white-space: nowrap;
+    font-size: 0.98rem;
+}
+
+.navbar .site-logo {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
 }
 
 .menu-toggle {
