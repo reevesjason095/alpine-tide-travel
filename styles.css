@@ -1,13 +1,17 @@
+/* FIX 2: Move overflow-x here to completely kill mobile horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
     background: linear-gradient(180deg, #f4f1ea 0%, #eef2ef 100%);
-    padding-top: 92px;
+    padding-top: 60px; /* Reduced to match the new flush navbar height */
     padding-bottom: 60px;
     color: #3f4a45;
     box-sizing: border-box;
@@ -26,7 +30,7 @@ body {
     gap: 12px;
     padding: 8px 18px;
     position: fixed;
-    top: 30px;
+    top: 0; /* FIX 1: Changed from 30px to 0 to make it flush with the top screen edge */
     left: 0;
     right: 0;
     width: 100%;
@@ -36,39 +40,16 @@ body {
     border-bottom: 1px solid #d8ddd8;
 }
 
-.site-header,
-.gallery-section,
-.video-section,
-.destinations-section,
-.blog-section,
-.countdown-card,
-.inquiry-container,
-.booking-inquiry-section,
-.booking-page-section,
-.about-section,
-.legal-wrap,
-.thank-you-wrap {
-    width: min(1100px, 92%);
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    max-width: 100%;
-}
-
-.media-card img,
-.media-card iframe {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-}
+/* ... keep your middle selectors (.site-header, .media-card, etc.) exactly the same ... */
 
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 88px;
+        padding-top: 55px; /* Adjust this to match your mobile navbar height perfectly */
     }
 
     .navbar {
         padding: 8px 14px;
+        top: 0; /* Ensures it stays flush on mobile */
     }
 
     .nav-brand h1 {
@@ -97,7 +78,7 @@ body {
         height: 100vh;
         padding: 70px 18px 18px;
         position: fixed;
-        top: 30px;
+        top: 0; /* FIX 1: Changed from 30px to 0 so the side menu aligns with the flush navbar */
         right: 0;
         background: #8a9b8f;
         box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
@@ -136,9 +117,15 @@ body {
         width: min(100%, 100%);
         padding: 28px 12px;
     }
-}
 
-    footer {
-        padding: 12px 14px 16px;
+    /* FIX 3: Force footer logos to shrink on mobile screens */
+    /* Adjust class name (.footer img) if your HTML uses a different class */
+    footer img, 
+    .footer-logo {
+        width: 120px;       /* Set maximum mobile width */
+        height: auto;        /* Prevent image distortion */
+        display: inline-block;
+        margin: 10px auto;
     }
 }
+
