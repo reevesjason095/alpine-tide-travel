@@ -7,25 +7,111 @@
     <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
+    <style>
+        .about-section {
+            width: min(900px, 92%);
+            margin: 40px auto 70px;
+        }
+
+        .about-card {
+            background: #ffffff;
+            border: 1px solid #cfe8ee;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 95, 115, 0.08);
+            padding: 32px 24px;
+            text-align: left;
+        }
+
+        .about-card h2 {
+            color: #023e8a;
+            margin-top: 0;
+        }
+
+        .about-card p {
+            color: #4e5b63;
+            line-height: 1.75;
+        }
+
+        .about-home-btn {
+            display: inline-block;
+            margin-top: 18px;
+            background: linear-gradient(135deg, #0a9396 0%, #0077b6 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            .about-section {
+                width: min(100%, 100%);
+                padding: 0 12px;
+            }
+
+            .about-card {
+                padding: 26px 18px;
+            }
+
+            .nav-brand h1 {
+                font-size: 0.95rem;
+                white-space: nowrap;
+            }
+
+            .site-logo {
+                width: 32px;
+                height: 32px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: min(84vw, 280px);
+                height: calc(100vh - 32px);
+                padding: 70px 18px 18px;
+                position: fixed;
+                top: 32px;
+                right: 0;
+                background: #8a9b8f;
+                box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                z-index: 1100;
+                align-items: flex-start;
+                overflow-y: auto;
+            }
+
+            .nav-links.show {
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="about-page" id="top">
+    <div class="countdown-marquee" aria-label="Caribbean Princess countdown">
+        <div class="countdown-marquee-track" id="countdownMarqueeText">Loading countdown...</div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-brand">
-            <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
-                <defs>
-                    <linearGradient id="oceanGradAbout" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#023e8a"/>
-                        <stop offset="55%" stop-color="#00b4d8"/>
-                        <stop offset="100%" stop-color="#90e0ef"/>
-                    </linearGradient>
-                </defs>
-                <circle cx="32" cy="32" r="31" fill="url(#oceanGradAbout)"></circle>
-                <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
-                <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
-            </svg>
-            <h1>Alpine Tide Travel</h1>
-         </div>
+            <a href="index.html" class="brand-link" aria-label="Go to home">
+                <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
+                    <defs>
+                        <linearGradient id="oceanGradAbout" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#023e8a"/>
+                            <stop offset="55%" stop-color="#00b4d8"/>
+                            <stop offset="100%" stop-color="#90e0ef"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="32" cy="32" r="31" fill="url(#oceanGradAbout)"></circle>
+                    <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
+                    <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
+                </svg>
+                <h1>Alpine Tide Travel</h1>
+            </a>
+        </div>
 
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
@@ -74,20 +160,6 @@
                 Our style is now more balanced, with a stronger focus on land travel, scenic drives, mountain getaways, and beach vacations,
                 while still enjoying cruise vacations when the right trip comes along.
             </p>
-
-            <!--    <h2>What I Do</h2>
-            <p>
-                I help with cruise planning, trip guidance, booking support, and personalized travel questions.
-                Whether you already know where you want to go or need help choosing the right sailing,
-                I’m here to help make it happen.
-            </p>
-
-            <h2>Why Travel With Us</h2>
-            <p>
-                At AlpineTideTravel, I want every trip to feel exciting and easy to plan.
-                I’m here to help you create lasting memories and enjoy a fantastic vacation experience.
-            </p> -->
-
             <a href="index.html" class="about-home-btn">Back to Home</a>
         </div>
     </section>
@@ -98,7 +170,6 @@
         <p>© 2026 AlpineTideTravel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
-       <!-- <p class="footer-notice">Alpine Tide Travel is an independent travel business.</p> -->
         <p id="currentTime" class="end"></p>
         <div class="footer-logos">
             <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Carnival logo">

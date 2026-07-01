@@ -1,3 +1,13 @@
+/* ==========================================================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
 /* FIX 2: Move overflow-x here to completely kill mobile horizontal scrolling */
 html, body {
     overflow-x: hidden;
@@ -23,6 +33,53 @@ body {
     box-sizing: border-box;
 }
 
+/* Container limits for sections */
+.site-header,
+.gallery-section,
+.video-section,
+.destinations-section,
+.blog-section,
+.countdown-card,
+.inquiry-container,
+.booking-inquiry-section,
+.booking-page-section,
+.about-section,
+.legal-wrap,
+.thank-you-wrap {
+    width: min(1100px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.media-card img,
+.media-card iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.blog-section .media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.blog-section .media-card {
+    background: #ffffff;
+    border: 1px solid #cfe8ee;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 95, 115, 0.08);
+    padding: 18px;
+    text-align: left;
+}
+
+.blog-section .media-card .media-caption {
+    padding: 0;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,6 +87,7 @@ body {
     gap: 12px;
     padding: 8px 18px;
     position: fixed;
+    top: 36px !important;
     top: 0; /* FIX 1: Changed from 30px to 0 to make it flush with the top screen edge */
     left: 0;
     right: 0;
@@ -40,6 +98,87 @@ body {
     border-bottom: 1px solid #d8ddd8;
 }
 
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-link h1 {
+    font-size: clamp(1rem, 1.3vw, 1.35rem);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    white-space: nowrap;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.countdown-marquee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1300;
+    background: linear-gradient(90deg, #023e8a, #0077b6, #00b4d8);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 8px 0;
+    font-weight: 700;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+.countdown-marquee-track {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marqueeMove 18s linear infinite;
+}
+
+@keyframes marqueeMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+footer img,
+.footer img,
+.footer-logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 140px;
+    height: auto;
+    margin: 10px 15px;
+}
+
+@media screen and (max-width: 1024px) {
+    .blog-section .media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 /* ... keep your middle selectors (.site-header, .media-card, etc.) exactly the same ... */
 
 @media screen and (max-width: 768px) {
@@ -47,6 +186,15 @@ body {
         padding-top: 55px; /* Adjust this to match your mobile navbar height perfectly */
     }
 
+    .countdown-marquee {
+        font-size: 0.9rem;
+        padding: 7px 0;
+        height: 32px;
+    }
+
+    .navbar {
+        padding: 8px 14px;
+        top: 32px !important;
     .navbar {
         padding: 8px 14px;
         top: 0; /* Ensures it stays flush on mobile */
@@ -75,9 +223,10 @@ body {
         flex-direction: column;
         gap: 10px;
         width: min(84vw, 280px);
-        height: 100vh;
-        padding: 70px 18px 18px;
+        height: calc(100vh - 32px);
+        padding: 18px;
         position: fixed;
+        top: 32px !important;
         top: 0; /* FIX 1: Changed from 30px to 0 so the side menu aligns with the flush navbar */
         right: 0;
         background: #8a9b8f;
@@ -86,6 +235,7 @@ body {
         transition: transform 0.3s ease;
         z-index: 1100;
         align-items: flex-start;
+        justify-content: flex-start;
         box-sizing: border-box;
         overflow-y: auto;
     }
@@ -111,6 +261,18 @@ body {
     .media-card {
         width: 100%;
         max-width: 100%;
+    }
+
+    .thank-you-wrap {
+        width: min(100%, 100%);
+        padding: 28px 12px;
+    }
+
+    footer img,
+    .footer img,
+    .footer-logo {
+        width: 100px;
+        margin: 8px 10px;
     }
 
     .thank-you-wrap {
