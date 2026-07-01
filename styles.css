@@ -8,12 +8,20 @@ html, body {
 }
 
 body {
+/* FIX 2: Move overflow-x here to completely kill mobile horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
     background: linear-gradient(180deg, #f4f1ea 0%, #eef2ef 100%);
-    padding-top: 92px;
+    padding-top: 60px; /* Reduced to match the new flush navbar height */
     padding-bottom: 60px;
     color: #3f4a45;
     box-sizing: border-box;
@@ -80,6 +88,7 @@ body {
     padding: 8px 18px;
     position: fixed;
     top: 36px !important;
+    top: 0; /* FIX 1: Changed from 30px to 0 to make it flush with the top screen edge */
     left: 0;
     right: 0;
     width: 100%;
@@ -170,10 +179,11 @@ footer img,
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+/* ... keep your middle selectors (.site-header, .media-card, etc.) exactly the same ... */
 
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 88px;
+        padding-top: 55px; /* Adjust this to match your mobile navbar height perfectly */
     }
 
     .countdown-marquee {
@@ -185,6 +195,9 @@ footer img,
     .navbar {
         padding: 8px 14px;
         top: 32px !important;
+    .navbar {
+        padding: 8px 14px;
+        top: 0; /* Ensures it stays flush on mobile */
     }
 
     .nav-brand h1 {
@@ -214,6 +227,7 @@ footer img,
         padding: 18px;
         position: fixed;
         top: 32px !important;
+        top: 0; /* FIX 1: Changed from 30px to 0 so the side menu aligns with the flush navbar */
         right: 0;
         background: #8a9b8f;
         box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
@@ -260,4 +274,20 @@ footer img,
         width: 100px;
         margin: 8px 10px;
     }
+
+    .thank-you-wrap {
+        width: min(100%, 100%);
+        padding: 28px 12px;
+    }
+
+    /* FIX 3: Force footer logos to shrink on mobile screens */
+    /* Adjust class name (.footer img) if your HTML uses a different class */
+    footer img, 
+    .footer-logo {
+        width: 120px;       /* Set maximum mobile width */
+        height: auto;        /* Prevent image distortion */
+        display: inline-block;
+        margin: 10px auto;
+    }
 }
+
