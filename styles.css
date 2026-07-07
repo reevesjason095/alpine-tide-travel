@@ -8,32 +8,36 @@ html, body {
 }
 
 body {
-/* FIX 2: Move overflow-x here to completely kill mobile horizontal scrolling */
-html, body {
-    overflow-x: hidden;
-}
-
-body {
-    width: 100%;
-    max-width: 100%;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
     background: linear-gradient(180deg, #f4f1ea 0%, #eef2ef 100%);
-    padding-top: 60px; /* Reduced to match the new flush navbar height */
+    padding-top: 92px;
     padding-bottom: 60px;
-    color: #3f4a45;
+    color: #222222;
+    box-sizing: border-box;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+img {
+    border: 5px solid #326c7a;
+}
+
+.blog-section .media-card p,
+.blog-section .media-card strong {
+    color: #2b2b2b;
+}
+
+.video-card {
+    border: 5px solid #282d2e;
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* Container limits for sections */
 .site-header,
 .gallery-section,
 .video-section,
@@ -45,7 +49,9 @@ body {
 .booking-page-section,
 .about-section,
 .legal-wrap,
-.thank-you-wrap {
+.thank-you-wrap,
+.booking-closed,
+.package-form-wrap {
     width: min(1100px, 92%);
     margin-left: auto;
     margin-right: auto;
@@ -68,11 +74,11 @@ body {
 }
 
 .blog-section .media-card {
-    background: #ffffff;
-    border: 1px solid #cfe8ee;
+    background: #dfdcdc;
+    border: 5px solid #cfe8ee;
     border-radius: 18px;
     box-shadow: 0 12px 28px rgba(0, 95, 115, 0.08);
-    padding: 18px;
+    padding: 10px;
     text-align: left;
 }
 
@@ -88,7 +94,6 @@ body {
     padding: 8px 18px;
     position: fixed;
     top: 36px !important;
-    top: 0; /* FIX 1: Changed from 30px to 0 to make it flush with the top screen edge */
     left: 0;
     right: 0;
     width: 100%;
@@ -131,6 +136,13 @@ body {
 
 .nav-links a {
     white-space: nowrap;
+    font-size: 0.98rem;
+}
+
+.navbar .site-logo {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
 }
 
 .menu-toggle {
@@ -167,11 +179,109 @@ body {
 footer img,
 .footer img,
 .footer-logo {
-    display: inline-block;
-    vertical-align: middle;
     width: 140px;
     height: auto;
-    margin: 10px 15px;
+    border: 5px solid #70806c;
+}
+
+.footer-links {
+    margin: 6px 0;
+}
+
+.footer-links a,
+.card-btn {
+    color: #023e8a;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.card-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #e6fbff;
+    border: 1px solid #cfe8ee;
+}
+
+.home-intro,
+.home-links,
+.featured-image,
+.about-section,
+.legal-wrap,
+.thank-you-wrap,
+.package-form-wrap {
+    width: min(900px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-card,
+.thank-you-card,
+.booking-closed,
+.legal-wrap,
+.package-form-card {
+    background: #ffffff;
+    border: 1px solid #cfe8ee;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 95, 115, 0.08);
+    padding: 32px 24px;
+}
+
+.home-link-btn,
+.thank-you-btn,
+.about-home-btn,
+.booking-closed .cta-btn,
+.legal-home-btn,
+.submit-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0a9396 0%, #0077b6 100%);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 0;
+}
+
+.navbar .site-logo,
+.site-header .site-logo {
+    width: 32px;
+    height: 32px;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.footer-logo-left {
+    margin-right: auto;
+}
+
+.footer-logo-right {
+    margin-left: auto;
+}
+
+/* Sensory-friendly additions */
+a, button, input, select, textarea {
+    transition: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #023e8a;
+    outline-offset: 3px;
+}
+
+html {
+    scroll-behavior: auto;
 }
 
 @media screen and (max-width: 1024px) {
@@ -179,25 +289,21 @@ footer img,
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-/* ... keep your middle selectors (.site-header, .media-card, etc.) exactly the same ... */
 
 @media screen and (max-width: 768px) {
     body {
-        padding-top: 55px; /* Adjust this to match your mobile navbar height perfectly */
+        padding-top: 88px;
     }
 
     .countdown-marquee {
         font-size: 0.9rem;
-        padding: 7px 0;
+        padding: 7px 12px;
         height: 32px;
     }
 
     .navbar {
         padding: 8px 14px;
         top: 32px !important;
-    .navbar {
-        padding: 8px 14px;
-        top: 0; /* Ensures it stays flush on mobile */
     }
 
     .nav-brand h1 {
@@ -227,7 +333,6 @@ footer img,
         padding: 18px;
         position: fixed;
         top: 32px !important;
-        top: 0; /* FIX 1: Changed from 30px to 0 so the side menu aligns with the flush navbar */
         right: 0;
         background: #8a9b8f;
         box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
@@ -252,6 +357,7 @@ footer img,
     .blog-section .media-grid,
     .gallery-section .media-grid,
     .media-grid {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
     }
@@ -268,26 +374,52 @@ footer img,
         padding: 28px 12px;
     }
 
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
     footer img,
     .footer img,
     .footer-logo {
         width: 100px;
         margin: 8px 10px;
     }
+}
 
-    .thank-you-wrap {
-        width: min(100%, 100%);
-        padding: 28px 12px;
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    /* FIX 3: Force footer logos to shrink on mobile screens */
-    /* Adjust class name (.footer img) if your HTML uses a different class */
-    footer img, 
-    .footer-logo {
-        width: 120px;       /* Set maximum mobile width */
-        height: auto;        /* Prevent image distortion */
-        display: inline-block;
-        margin: 10px auto;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .countdown-marquee-track {
+        animation: none !important;
+        padding-left: 0;
     }
 }
 
+@media (prefers-contrast: more) {
+    body {
+        background: #ffffff;
+        color: #111111;
+    }
+
+    .navbar,
+    .blog-section .media-card,
+    .about-card,
+    .booking-closed,
+    .thank-you-card,
+    .package-form-card,
+    .legal-wrap {
+        box-shadow: none;
+        border-color: #000000;
+    }
+}
