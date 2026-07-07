@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking - AlpineTideTravel</title>
+    <title>Booking | Alpine Tide Travel</title>
+    <meta name="description" content="Book your next trip with Alpine Tide Travel. Share your travel date, budget, destination, and trip details in our booking form.">
     <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
@@ -33,27 +34,26 @@
         </button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
-            <li><a href="inquiry.html">Inquiry</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#blog-anchor">Blog</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
         </ul>
     </nav>
 
     <header class="site-header">
         <hr class="main">
         <h1 class="title">Booking</h1>
-        <p class="subtitle">Use our booking form or contact us for trip planning.</p>
+        <p class="subtitle">Tell us about your trip and we’ll get back to you.</p>
         <hr class="main">
     </header>
 
     <main class="package-form-wrap">
         <section class="package-form-card">
-            <div class="package-badge">Booking Form</div>
-            <p>Please complete the form below to start your trip request.</p>
+            <div class="package-badge">Booking and Trip Inquiry Form</div>
+            <p>Please complete the form below to start your request.</p>
 
             <form id="packageInquiryForm" name="package-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="package-inquiry">
-                <input type="hidden" name="package_type" id="packageType" value="booking">
 
                 <p class="hidden">
                     <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
@@ -70,11 +70,6 @@
                         <input type="email" id="emailAddress" name="email" required>
                     </div>
 
-                    <div class="form-group full">
-                        <label for="destination">Preferred Destination / Details</label>
-                        <textarea id="destination" name="destination" required></textarea>
-                    </div>
-
                     <div class="form-group">
                         <label for="travelDate">Estimated Travel Date</label>
                         <input type="date" id="travelDate" name="travel_date">
@@ -87,6 +82,11 @@
                             <option value="luxury">Luxury</option>
                             <option value="ultra-luxury">Ultra-Luxury / Custom</option>
                         </select>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="destination">Preferred Destination / Details</label>
+                        <textarea id="destination" name="destination" required placeholder="Tell us where you want to go and any trip details."></textarea>
                     </div>
 
                     <div class="form-group full">
@@ -106,6 +106,9 @@
         <p>© 2026 Alpine Tide Travel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
+        <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
+        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
+        <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruise Lines, Ltd. Used with permission.</p>
         <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
         <p id="currentTime" class="end"></p>
         <div class="footer-logos">
