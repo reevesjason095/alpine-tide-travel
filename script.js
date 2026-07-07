@@ -87,29 +87,6 @@ if (navLinks) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const travelStyleSelect = document.getElementById("travelStyle");
-    const dynamicDestinationDiv = document.getElementById("dynamicDestination");
-    const destinationLabel = document.getElementById("destinationLabel");
-    const destinationInput = document.getElementById("destination");
-
-    if (!travelStyleSelect || !dynamicDestinationDiv || !destinationLabel || !destinationInput) return;
-
-    travelStyleSelect.addEventListener("change", (e) => {
-        const selection = e.target.value;
-
-        dynamicDestinationDiv.classList.remove("hidden");
-
-        if (selection === "alpine") {
-            destinationLabel.textContent = "Which mountain range or resort?";
-            destinationInput.placeholder = "e.g., Great Smoky Mountains, Aspen, Swiss Alps";
-        } else if (selection === "tide") {
-            destinationLabel.textContent = "Which cruise line, island, or beach destination?";
-            destinationInput.placeholder = "e.g., Princess Cruises, St. Lucia, Riviera Maya";
-        }
-    });
-});
-
 window.addEventListener("scroll", toggleTopButton);
 window.addEventListener("load", toggleTopButton);
 
