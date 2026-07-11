@@ -1,34 +1,34 @@
 // Target date: August 23, 2026 at 11:00 AM Eastern Time
 const cruiseDate = new Date("2026-08-23T11:00:00-04:00");
 
+function updateBannerText() {
+    const marqueeElement = document.getElementById("countdownMarqueeText");
+    if (marqueeElement) {
+        marqueeElement.textContent = "We are now proud to partner with WorldVia Travel Network!";
+    }
+}
+
+updateBannerText();
+
 function updateCountdown() {
     const timerElement = document.getElementById("timer");
-    const marqueeElement = document.getElementById("countdownMarqueeText");
 
     const now = new Date();
     const difference = cruiseDate - now;
 
-    let message = "";
-
     if (difference <= 0) {
-        message = "Countdown complete - sailing day is here!";
         if (timerElement) {
-            timerElement.textContent = message;
+            timerElement.textContent = "Countdown complete - sailing day is here!";
         }
     } else {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        message = `${days}d ${hours}h ${minutes}m ${seconds}s until Caribbean Princess departure, Join us for our 21st Anniversary Cruise`;
 
         if (timerElement) {
             timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
-    }
-
-    if (marqueeElement) {
-        marqueeElement.textContent = message;
     }
 }
 
@@ -87,29 +87,6 @@ if (navLinks) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const travelStyleSelect = document.getElementById("travelStyle");
-    const dynamicDestinationDiv = document.getElementById("dynamicDestination");
-    const destinationLabel = document.getElementById("destinationLabel");
-    const destinationInput = document.getElementById("destination");
-
-    if (!travelStyleSelect || !dynamicDestinationDiv || !destinationLabel || !destinationInput) return;
-
-    travelStyleSelect.addEventListener("change", (e) => {
-        const selection = e.target.value;
-
-        dynamicDestinationDiv.classList.remove("hidden");
-
-        if (selection === "alpine") {
-            destinationLabel.textContent = "Which mountain range or resort?";
-            destinationInput.placeholder = "e.g., Great Smoky Mountains, Aspen, Swiss Alps";
-        } else if (selection === "tide") {
-            destinationLabel.textContent = "Which cruise line, island, or beach destination?";
-            destinationInput.placeholder = "e.g., Princess Cruises, St. Lucia, Riviera Maya";
-        }
-    });
-});
-
 window.addEventListener("scroll", toggleTopButton);
 window.addEventListener("load", toggleTopButton);
 
@@ -120,6 +97,7 @@ function scrollToTop() {
     });
 }
 
+updateBannerText();
 updateCountdown();
 updateLocalClock();
 
