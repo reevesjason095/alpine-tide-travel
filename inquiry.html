@@ -3,81 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlpineTideTravel</title>
+    <title>Inquiry - AlpineTideTravel</title>
     <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
-    <style>
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            width: 100%;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-brand h1 {
-                font-size: 0.95rem;
-                line-height: 1.1;
-                white-space: nowrap;
-            }
-
-            .site-logo {
-                width: 34px;
-                height: 34px;
-            }
-
-            .navbar {
-                padding: 8px 12px;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 30px;
-                right: 0;
-                height: 100vh;
-                width: min(84vw, 280px);
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-                z-index: 1100;
-                background: #8a9b8f;
-                box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
-                padding: 70px 18px 18px;
-                flex-direction: column;
-                align-items: flex-start;
-                overflow-y: auto;
-            }
-
-            .nav-links.show {
-                transform: translateX(0);
-            }
-        }
-    </style>
 </head>
 <body id="top">
     <div class="countdown-marquee" aria-label="Caribbean Princess countdown">
-        <div class="countdown-marquee-track" id="countdownMarqueeText">Loading countdown...</div>
+        <div class="countdown-marquee-track" id="countdownMarqueeText">We are now proud to partner with WorldVia Travel Network!</div>
     </div>
 
     <nav class="navbar">
         <div class="nav-brand">
-            <a href="#top" class="brand-link" aria-label="Back to top">
+            <a href="index.html" class="brand-link" aria-label="Go to home">
                 <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
                     <defs>
-                        <linearGradient id="oceanGrad" x1="0%" y1="0%" y2="100%" x2="100%">
+                        <linearGradient id="oceanGradInquiry" x1="0%" y1="0%" y2="100%" x2="100%">
                             <stop offset="0%" stop-color="#023e8a"/>
                             <stop offset="55%" stop-color="#00b4d8"/>
                             <stop offset="100%" stop-color="#90e0ef"/>
                         </linearGradient>
                     </defs>
-                    <circle cx="32" cy="32" r="31" fill="url(#oceanGrad)"></circle>
+                    <circle cx="32" cy="32" r="31" fill="url(#oceanGradInquiry)"></circle>
                     <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
                     <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
                 </svg>
-                <h1>Alpine Tide Travel</h1>
+                <h1>AlpineTideTravel</h1>
             </a>
         </div>
 
@@ -86,148 +38,85 @@
         </button>
 
         <ul class="nav-links" id="navLinks">
-            <li><a href="#gallery-anchor">Gallery</a></li>
-            <li><a href="#video-anchor">Videos</a></li>
-            <li><a href="#destinations-anchor">Destinations</a></li>
-            <li><a href="#blog-anchor">Blog</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li>
-                <a href="https://www.youtube.com/@oceanapex" target="_blank" rel="noopener noreferrer" class="youtube-link">
-                    <i class="fa-brands fa-youtube"></i> YouTube
-                </a>
-            </li>
+            <li><a href="index.html#blog-anchor">Blog</a></li>
         </ul>
     </nav>
 
-    <header class="site-header home-header">
-        <p>Welcome to Alpine Tide Travel!!</p>
-        <hr>
-        <p class="subtitle home-tagline">From mountain escapes to cruise adventures, we help you plan both.</p>
+    <header class="site-header">
+        <hr class="main">
+        <h1 class="title">General Inquiry</h1>
+        <p class="subtitle">Tell us about your trip, blog idea, pictures, or videos and we’ll get back to you.</p>
         <hr class="main">
     </header>
 
-    <section class="blog-section" id="blog-anchor">
-        <div class="section-label">Travel Blog</div>
-        <h2 class="gallery-title">Latest Travel Notes</h2>
-        <p class="gallery-subtitle">Stories, tips, and updates from our land and cruise adventures.</p>
+    <section class="inquiry-container">
+        <h2>Contact Me</h2>
+        <p>Use this form for cruise questions, travel planning, photo submissions, video ideas, or blog suggestions.</p>
 
-        <div class="media-grid">
-            <div class="media-card">
-                <div class="media-caption">
-                    <p><strong>Featured Trip</strong></p>
-                    <p>We will be heading to Florida on August 22 to take a 7-night cruise for our 21st Anniversary, but our travel focus is now expanding to include more land travel, resort stays, and scenic getaways too.</p>
-                    <p>The first stop on our journey in this blog will be <b>Turks and Caicos</b>.</p>
-                    <p>Here are three fantastic ways to maximize your time porting in Turks and Caicos (Grand Turk):</p>
-                    <ul>
-                        <li><strong>Relax at Governor's Beach:</strong> Located within Columbus Landfall National Park, this stunning white-sand beach is one of the most beautiful spots on the island. It sits just a short ride from the cruise port by taxi or rental golf cart.</li>
-                        <li><strong>Snorkel with Stingrays at Gibbs Cay:</strong> For an unforgettable marine adventure, book a boat excursion to Gibbs Cay. This small, uninhabited island features crystal-clear shallows where visitors can swim and interact with gentle, wild stingrays.</li>
-                        <li><strong>Explore via Golf Cart Rental:</strong> Renting a golf cart is the ultimate way to see Grand Turk at your own pace. It gives you the freedom to cruise up to Cockburn Town, visit historic lighthouses, and find secluded beaches away from the typical tourist crowds.</li>
-                    </ul>
-                    <p>Thank you for reading! Be sure to check back soon, as we will be updating the site with more destination guides and travel tips for both cruise and land travel.</p>
+        <form id="travelInquiryForm" name="general-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="general-inquiry">
+            <p class="hidden">
+                <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+            </p>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" id="emailAddress" name="email" required placeholder="john@example.com">
                 </div>
             </div>
 
-            <div class="media-card">
-                <div class="media-caption">
-                    <p><strong>San Juan, Puerto Rico</strong></p>
-                    <p>Next up on this itinerary is San Juan, Puerto Rico, a vibrant port known for its colorful colonial architecture, massive fortresses, and rich culture. When your cruise ship docks, you will be steps away from centuries of history.</p>
-                    <p>Here are the top ways to spend your day:</p>
-                    <ul>
-                        <li><strong>Step Back in Time in Old San Juan:</strong> The cruise piers sit right at the edge of the historic district. Spend your morning wandering the cobblestone streets, admiring the pastel-colored buildings, and visiting the iconic 16th-century fortress, Castillo San Felipe del Morro (El Morro).</li>
-                        <li><strong>Hike through El Yunque National Forest:</strong> If you prefer nature over history, book an excursion to the only tropical rainforest in the U.S. National Forest System. It features lush hiking trails, incredible biodiversity, and scenic natural waterfalls perfect for a refreshing swim.</li>
-                        <li><strong>Sip an Authentic Piña Colada:</strong> Puerto Rico is the birthplace of this famous tropical drink. Take a break from exploring to grab lunch at a local café, order some traditional mofongo (mashed plantains), and enjoy a fresh cocktail right where it was invented.</li>
-                    </ul>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required placeholder="How can we help?">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required placeholder="Tell us about your trip, idea, or question..."></textarea>
+            </div>
+
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="travelDate">Estimated Travel Date</label>
+                    <input type="date" id="travelDate" name="travel_date">
+                </div>
+                <div class="form-group">
+                    <label for="budgetSelect">Estimated Budget per Person</label>
+                    <select id="budgetSelect" name="budget">
+                        <option value="moderate">Moderate</option>
+                        <option value="luxury">Luxury</option>
+                        <option value="ultra-luxury">Ultra-Luxury / Custom</option>
+                    </select>
                 </div>
             </div>
 
-            <div class="media-card">
-                <div class="media-caption">
-                    <p><strong>Amber Cove, Dominican Republic</strong></p>
-                    <p>Located on the northern "Amber Coast" of the Dominican Republic, Amber Cove is a modern, resort-style port designed specifically for cruise passengers. It serves as both a relaxing sanctuary and a gateway to outdoor adventure.</p>
-                    <p>Here is how to make the most of your visit:</p>
-                    <ul>
-                        <li><strong>Lounge at the Aqua Zone:</strong> You do not even need to leave the port to have a fantastic day. Amber Cove features a massive, resort-style pool complex that is completely free to access. It includes a swim-up bar, waterslides, plenty of lounge chairs, and over-water cabanas available for rent.</li>
-                        <li><strong>Chasing Waterfalls at Damajagua:</strong> For thrill-seekers, the 27 Waterfalls of Damajagua is a must-do excursion. Guided tours take you deep into the jungle to hike up, then slide, jump, and swim down a series of spectacular limestone canyons and natural waterslides.</li>
-                        <li><strong>Meet the Locals at Monkeyland:</strong> Take an open-air safari truck into the Dominican countryside to visit a beautiful monkey sanctuary. Here, playful squirrel monkeys interact directly with visitors, climbing right onto your shoulders for unforgettable photos.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+            <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
     </section>
-
-    <img class="img1" src="https://plus.unsplash.com/premium_photo-1661900817397-400624fd4858?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3J1aXNlJTIwc2hpcHxlbnwwfHwwfHx8MA%3D%3D" alt="AlpineTideTravel Cruise Ship" width="500px">
-
-    <section class="gallery-section" id="gallery-anchor">
-        <div class="section-label">Photo Gallery</div>
-        <h2 class="gallery-title">Our Favorite Travel Memories</h2>
-        <p class="gallery-subtitle">Take a look at some of our favorite travel memories from cruises and land trips.</p>
-
-        <div class="media-grid">
-            <div class="media-card">
-                <img src="https://plus.unsplash.com/premium_photo-1733292010795-1311504ce3aa?q=80&w=1168&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Puerto Rico stunning view">
-                <div class="media-caption">Beautiful Puerto Rico</div>
-            </div>
-
-            <div class="media-card">
-                <img src="https://plus.unsplash.com/premium_photo-1731595022278-1df824cfe6c8?w=500&auto=format&fit=crop&q=60" alt="Sunset Deck View">
-                <div class="media-caption">Sunset from the Upper Deck</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="video-section" id="video-anchor">
-        <div class="section-label">Video Gallery</div>
-        <h2 class="gallery-title">Travel Stories in Motion</h2>
-        <p class="gallery-subtitle">Watch highlights from our cruise adventures and future land travel trips too.</p>
-
-        <div class="media-grid">
-            <div class="media-card video-card">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Js-sc8ZRIGE" title="Carnival Ecstasy Cruise Vlog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="media-caption">🎬 Throwback Sailing: Carnival Ecstasy 2018 Cruise Memories</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="destinations-section" id="destinations-anchor">
-        <div class="section-label">Popular Destinations</div>
-        <h2 class="gallery-title">Popular Travel Destinations</h2>
-        <p class="gallery-subtitle">Some of the most popular places travelers love to visit, by land or sea.</p>
-
-        <div class="media-grid">
-            <div class="media-card">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60" alt="Caribbean Beach">
-                <div class="media-caption">Caribbean Islands</div>
-            </div>
-            <div class="media-card">
-                <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=500&auto=format&fit=crop&q=60" alt="Alaska Mountains">
-                <div class="media-caption">Alaska Cruises</div>
-            </div>
-            <div class="media-card">
-                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=500&auto=format&fit=crop&q=60" alt="Mediterranean Coast">
-                <div class="media-caption">Mediterranean</div>
-            </div>
-        </div>
-    </section>
-
-    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
-        Back to top <i class="fa-solid fa-arrow-up"></i>
-    </button>
 
     <hr class="main">
 
     <footer>
-        <p>© 2026 Alpine Tide Travel<br>
+        <p>© 2026 AlpineTideTravel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
-      <!--  <p class="footer-notice">Alpine Tide Travel is an independent travel business.</p> -->
+        <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
+        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
+        <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruise Lines, Ltd. Used with permission.</p>
+        <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
         <p id="currentTime" class="end"></p>
         <div class="footer-logos">
             <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Carnival logo">
             <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Commodore insignia logo">
         </div>
     </footer>
-
-    <hr class="main">
 
     <script src="script.js"></script>
 </body>
