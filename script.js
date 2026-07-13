@@ -4,7 +4,7 @@ const cruiseDate = new Date("2026-08-23T11:00:00-04:00");
 function updateBannerText() {
     const marqueeElement = document.getElementById("countdownMarqueeText");
     if (marqueeElement) {
-        marqueeElement.textContent = "We are now proud to partner with WorldVia Travel Network!";
+        marqueeElement.textContent = "Alpine Tide Travel is a Proud Independent Agent of the WorldVia Travel Network"!;
     }
 }
 
