@@ -8,28 +8,23 @@ function updateBannerText() {
     }
 }
 
-updateBannerText();
-
 function updateCountdown() {
     const timerElement = document.getElementById("timer");
+    const difference = cruiseDate - new Date();
 
-    const now = new Date();
-    const difference = cruiseDate - now;
+    if (!timerElement) return;
 
     if (difference <= 0) {
-        if (timerElement) {
-            timerElement.textContent = "Countdown complete - sailing day is here!";
-        }
-    } else {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        if (timerElement) {
-            timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
+        timerElement.textContent = "Countdown complete - sailing day is here!";
+        return;
     }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
 function updateLocalClock() {
@@ -52,44 +47,6 @@ function updateLocalClock() {
     clockElement.innerHTML = `Current Local Time: ${easternTime} ET`;
 }
 
-const topButton = document.getElementById("backToTopBtn");
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-function toggleTopButton() {
-    if (!topButton) return;
-    if (window.scrollY > 300 || document.documentElement.scrollTop > 300) {
-        topButton.style.setProperty("display", "flex", "important");
-    } else {
-        topButton.style.setProperty("display", "none", "important");
-    }
-}
-
-function toggleMenu() {
-    if (!menuToggle || !navLinks) return;
-    navLinks.classList.toggle("show");
-    const expanded = navLinks.classList.contains("show");
-    menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-    menuToggle.innerHTML = expanded
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
-}
-
-if (menuToggle) {
-    menuToggle.addEventListener("click", toggleMenu);
-}
-
-if (navLinks) {
-    navLinks.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            if (window.innerWidth <= 768) toggleMenu();
-        });
-    });
-}
-
-window.addEventListener("scroll", toggleTopButton);
-window.addEventListener("load", toggleTopButton);
-
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -97,9 +54,49 @@ function scrollToTop() {
     });
 }
 
-updateBannerText();
-updateCountdown();
-updateLocalClock();
+function toggleTopButton() {
+    const topButton = document.getElementById("backToTopBtn");
+    if (!topButton) return;
 
-setInterval(updateCountdown, 1000);
-setInterval(updateLocalClock, 1000);
+    const shouldShow = window.scrollY > 300 || document.documentElement.scrollTop > 300;
+    topButton.style.setProperty("display", shouldShow ? "flex" : "none", "important");
+}
+
+function initMobileMenu() {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (!menuToggle || !navLinks) return;
+
+    function toggleMenu() {
+        navLinks.classList.toggle("show");
+        const expanded = navLinks.classList.contains("show");
+        menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+        menuToggle.innerHTML = expanded
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+    }
+
+    menuToggle.addEventListener("click", toggleMenu);
+
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 768 && navLinks.classList.contains("show")) {
+                toggleMenu();
+            }
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateBannerText();
+    updateCountdown();
+    updateLocalClock();
+    toggleTopButton();
+    initMobileMenu();
+
+    setInterval(updateCountdown, 1000);
+    setInterval(updateLocalClock, 1000);
+});
+
+window.addEventListener("scroll", toggleTopButton);
