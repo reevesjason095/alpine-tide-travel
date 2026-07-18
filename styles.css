@@ -11,7 +11,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
     background: linear-gradient(180deg, #f4f1ea 0%, #eef2ef 100%);
     padding-top: 92px;
     padding-bottom: 60px;
@@ -19,23 +18,16 @@ body {
     box-sizing: border-box;
     line-height: 1.6;
     letter-spacing: 0.01em;
+    text-align: left;
 }
 
 img {
-    border: 5px solid #326c7a;
-}
-
-.blog-section .media-card p,
-.blog-section .media-card strong {
-    color: #2b2b2b;
-}
-
-.blog-section .blog-title {
-    text-align: center;
+    border: 3px solid #7fa5ad;
+    border-radius: 12px;
 }
 
 .video-card {
-    border: 5px solid #282d2e;
+    border: 3px solid #566063;
 }
 
 *, *::before, *::after {
@@ -70,6 +62,10 @@ img {
     max-width: 100%;
 }
 
+.blog-section {
+    text-align: left;
+}
+
 .blog-section .media-grid {
     display: flex;
     justify-content: center;
@@ -79,11 +75,11 @@ img {
 
 .blog-section .media-card {
     width: min(100%, 980px);
-    background: #dfdcdc;
-    border: 5px solid #cfe8ee;
-    border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(0, 95, 115, 0.08);
-    padding: 18px;
+    background: #fbfbfa;
+    border: 1px solid #d9e5e8;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 95, 115, 0.06);
+    padding: 20px;
     text-align: left;
     margin: 0 auto;
 }
@@ -92,6 +88,64 @@ img {
     padding: 0;
 }
 
+.blog-section .media-caption,
+.blog-section .media-caption p,
+.blog-section .media-caption li {
+    color: #1f1f1f;
+}
+
+.blog-section .media-caption p {
+    margin: 0 0 1rem;
+}
+
+.blog-section .media-caption h1,
+.blog-section .media-caption h2,
+.blog-section .media-caption h3 {
+    margin-top: 1.15rem;
+    margin-bottom: 0.55rem;
+    line-height: 1.25;
+}
+
+.blog-section .media-caption ul {
+    text-align: left;
+    margin: 0 0 1rem 1.25rem;
+    padding-left: 1rem;
+}
+
+.blog-section .media-caption li {
+    margin-bottom: 0.55rem;
+}
+
+.blog-section .media-caption .cta-box {
+    border-radius: 14px;
+    background: #f4f6f8;
+    padding: 20px;
+    border-left: 5px solid #2b5c8f;
+    margin-top: 30px;
+}
+
+.blog-section .media-caption .article-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0.75rem 0 1rem;
+    border-radius: 12px;
+}
+
+.page-cta {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #e6fbff;
+    border: 1px solid #cfe8ee;
+    color: #023e8a;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   2. NAVBAR STRUCTURE
+   ========================================================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -99,7 +153,7 @@ img {
     gap: 12px;
     padding: 8px 18px;
     position: fixed;
-    top: 36px !important;
+    top: 36px;
     left: 0;
     right: 0;
     width: 100%;
@@ -155,7 +209,10 @@ img {
     display: none;
 }
 
-.countdown-marquee {
+/* ==========================================================================
+   3. ANNOUNCEMENT BAR
+   ========================================================================== */
+.announcement-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -171,23 +228,24 @@ img {
     box-sizing: border-box;
 }
 
-.countdown-marquee-track {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marqueeMove 18s linear infinite;
+.announcement-bar-track {
+    display: block;
+    padding-left: 0;
+    animation: none;
+    text-align: center;
+    width: 100%;
 }
 
-@keyframes marqueeMove {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
+/* ==========================================================================
+   4. INTERACTIVE ELEMENTS & FORMS
+   ========================================================================== */
 footer img,
 .footer img,
 .footer-logo {
     width: 140px;
     height: auto;
-    border: 5px solid #70806c;
+    border: 3px solid #8b9a8a;
+    border-radius: 10px;
 }
 
 .footer-links {
@@ -248,6 +306,38 @@ footer img,
     border-radius: 999px;
     font-weight: 700;
     border: 0;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #cfe8ee;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 1rem;
+    color: #222222;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-family: inherit;
+    line-height: 1.4;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    color: #222222;
+    margin-top: 10px;
 }
 
 .navbar .site-logo,
@@ -272,7 +362,6 @@ footer img,
     margin-left: auto;
 }
 
-/* Sensory-friendly additions */
 a, button, input, select, textarea {
     transition: none;
 }
@@ -290,6 +379,9 @@ html {
     scroll-behavior: auto;
 }
 
+/* ==========================================================================
+   5. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media screen and (max-width: 1024px) {
     .blog-section .media-card {
         width: min(100%, 100%);
@@ -301,7 +393,7 @@ html {
         padding-top: 88px;
     }
 
-    .countdown-marquee {
+    .announcement-bar {
         font-size: 0.9rem;
         padding: 7px 12px;
         height: 32px;
@@ -309,7 +401,10 @@ html {
 
     .navbar {
         padding: 8px 14px;
-        top: 32px !important;
+        top: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .nav-brand h1 {
@@ -328,6 +423,7 @@ html {
         align-items: center;
         justify-content: center;
         z-index: 1250;
+        margin-left: auto;
     }
 
     .nav-links {
@@ -338,9 +434,9 @@ html {
         height: calc(100vh - 32px);
         padding: 18px;
         position: fixed;
-        top: 32px !important;
+        top: 32px;
         right: 0;
-        background: #8a9b8f;
+        background: #3e4a40;
         box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
         transform: translateX(100%);
         transition: transform 0.3s ease;
@@ -405,11 +501,6 @@ html {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-
-    .countdown-marquee-track {
-        animation: none !important;
-        padding-left: 0;
-    }
 }
 
 @media (prefers-contrast: more) {
@@ -428,4 +519,15 @@ html {
         box-shadow: none;
         border-color: #000000;
     }
+}
+
+.gb {
+    max-width: 500px;
+    width: 100%;
+    height: 300px;
+}
+.gb1 {
+    max-width: 500px;
+    width: 50%;
+    height: 500px;
 }
