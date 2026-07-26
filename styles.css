@@ -28,7 +28,7 @@ img {
 .blog-section .media-card p,
 .blog-section .media-card strong {
     color: #2b2b2b;
-   width: 100%;
+   
 }
 
 .video-card {
@@ -81,6 +81,7 @@ img {
     box-shadow: 0 12px 28px rgba(0, 95, 115, 0.08);
     padding: 10px;
     text-align: left;
+   width: 100%;
 }
 
 .blog-section .media-card .media-caption {
