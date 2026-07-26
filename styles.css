@@ -74,6 +74,15 @@ img {
     align-items: stretch;
 }
 
+/* Single blog post full width */
+.blog-section .media-grid:has(.media-card:only-child) {
+    grid-template-columns: 1fr;
+}
+
+.blog-section .media-grid:has(.media-card:only-child) .media-card {
+    max-width: 100%;
+}
+
 .blog-section .media-card {
     background: #dfdcdc;
     border: 5px solid #cfe8ee;
