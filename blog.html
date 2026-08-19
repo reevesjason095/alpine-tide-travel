@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Blog | Alpine Tide Travel</title>
-    <meta name="description" content="Read short travel blog summaries from Alpine Tide Travel and open full articles for more details.">
+    <title>Travel Resource Blog | Alpine Tide Travel</title>
+    <meta name="description" content="Explore specialized travel advice, sensory guides, and historical destination spotlights from Alpine Tide Travel.">
     <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
 </head>
-<body id="top">
-    <div class="announcement-bar" aria-label="Travel announcement">
+<body>
+
+    <!-- Skip link for keyboard/screen-reader navigation loops -->
+    <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+    <div class="announcement-bar" role="text" aria-label="Network Announcement">
         <div class="announcement-bar-track" id="countdownMarqueeText">We are now proud to partner with WorldVia Travel Network</div>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="nav-brand">
-            <a href="index.html" class="brand-link" aria-label="Go to home">
+            <a href="index.html" class="brand-link" aria-label="Alpine Tide Travel - Home">
                 <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
                     <defs>
-                        <linearGradient id="oceanGradBlog" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="oceanGradBlog" x1="0%" y1="0%" y2="100%" x2="100%">
                             <stop offset="0%" stop-color="#023e8a"/>
                             <stop offset="55%" stop-color="#00b4d8"/>
                             <stop offset="100%" stop-color="#90e0ef"/>
@@ -34,56 +38,84 @@
             </a>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="booking.html">Book Now</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="terms.html">Terms and Conditions</a></li>
         </ul>
     </nav>
 
-    <header class="site-header">
-        <hr class="main">
-        <h1 class="title">Travel Blog</h1>
-        <p class="subtitle">Short summaries of our latest travel stories.</p>
-        <hr class="main">
-    </header>
+    <main id="main-content">
+        <header class="site-header">
+            <hr class="main">
+            <h1 class="title">Travel Resources & Stories</h1>
+            <p class="subtitle">Actionable destination insights and accessibility tools for your next vacation layout.</p>
+            <hr class="main">
+        </header>
 
-    <section class="blog-section" id="blog-greenbrier">
-        <h2 class="gallery-title">Latest Travel Notes</h2>
-        <p class="gallery-subtitle">Browse the latest posts and click through to read the full article.</p>
+        <!-- Article 1: Sunflower Lanyard -->
+        <section class="blog-section" id="blog-lanyard" aria-labelledby="heading-lanyard">
+            <div class="section-label">Sensory-Friendly Travel</div>
+            <h2 id="heading-lanyard" class="gallery-title" style="margin-top: 5px;">The Green Lanyard That Secures Calmer Airport Travel</h2>
+            <p class="gallery-subtitle">A helpful guide to the Hidden Disabilities Sunflower Program, TSA Cares, and airport support for families requiring extra patience.</p>
 
-        <div class="media-grid">
-            <div class="media-card">
-                <div class="media-caption">
-                    <h2 class="blog-title">The Greenbrier Bunker</h2>
-                    <p>A fascinating look at the hidden Cold War bunker beneath The Greenbrier resort in West Virginia.</p>
-                    <p>Read the full article for the bunker history, tour details, and travel ideas for exploring the area.</p>
-                    <a href="greenbrier-bunker.html" class="card-btn">Click to read the full article</a>
-                </div>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-caption">
+                        <p>If airport travel feels overwhelming, the green sunflower lanyard can quietly signal to trained staff that a traveler may need extra patience, clearer communication, or more time.</p>
+                        <p>This guide explains what the lanyard is, where to get one, and how it pairs with TSA Cares for a smoother airport experience.</p>
+                        <a href="lanyard.html" class="card-btn" aria-label="Read full article on the Green Sunflower Lanyard program">Read Full Article</a>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="blog-section" id="blog-portcanaveral">
-        <div class="section-label">Port Canaveral</div>
-        <p class="gallery-subtitle">Browse the latest posts and click through to read the full article.</p>
+        <!-- Article 2: Greenbrier Bunker -->
+        <section class="blog-section" id="blog-greenbrier" aria-labelledby="heading-greenbrier">
+            <div class="section-label">Latest Travel Notes</div>
+            <h2 id="heading-greenbrier" class="gallery-title" style="margin-top: 5px;">The Greenbrier Bunker Historic Exploration</h2>
+            <p class="gallery-subtitle">Browse our destination notes and click through to review historical itineraries.</p>
 
-        <div class="media-grid">
-            <div class="media-card">
-                <div class="media-caption">
-                    <h2 class="blog-title">Exploring Orlando and Port Canaveral</h2>
-                    <p>A quick look at Orlando and Port Canaveral, from Disney to the Kennedy Space Center.</p>
-                    <p>Read the full article for travel ideas for exploring the area.</p>
-                    <a href="portcanaveral.html" class="card-btn">Click to read the full article</a>
-                </div>
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-caption">
+                        <p>A fascinating look at the hidden Cold War bunker engineered deep beneath the luxury spaces of The Greenbrier resort in West Virginia.</p>
+                        <p>Read our full summary guide detailing bunker logistics, regional historical tour options, and planning tips for exploring the local area.</p>
+                        <a href="greenbrier-bunker.html" class="card-btn" aria-label="Read full article on The Greenbrier Bunker historical tours">Read Full Article</a>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Article 3: Port Canaveral -->
+        <section class="blog-section" id="blog-portcanaveral" aria-labelledby="heading-portcanaveral">
+            <div class="section-label">Port Canaveral & Orlando</div>
+            <h2 id="heading-portcanaveral" class="gallery-title" style="margin-top: 5px;">Exploring Orlando Cruise Hubs and Port Canaveral</h2>
+            <p class="gallery-subtitle">Essential planning guide for transitions from theme parks to cruise departures.</p>
+
+            <div class="media-grid">
+                <article class="media-card">
+                    <div class="media-caption">
+                        <p>A close strategic look at mapping connections through Orlando and Port Canaveral, balancing Disney land excursions with deep sea cruise options and Kennedy Space Center visits.</p>
+                        <p>Review our planning guide to build out a seamless transition layout for your family's next Florida departure.</p>
+                        <a href="portcanaveral.html" class="card-btn" aria-label="Read full article on Orlando and Port Canaveral cruise hub planning">Read Full Article</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <hr class="main">
 
     <footer>
+        <div class="footer-socials" aria-label="Social media links">
+            <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://instagram.com/alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
         <p>© 2026 Alpine Tide Travel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
@@ -93,8 +125,8 @@
         <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
         <p id="currentTime" class="end"></p>
         <div class="footer-logos">
-            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Carnival logo">
-            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Commodore insignia logo">
+            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Official graduate emblem badge for Carnival Cruise Line Diamond Level Expert Program">
+            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Official Commodore Insignia certification program achievement logo">
         </div>
     </footer>
 
