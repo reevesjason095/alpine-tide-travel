@@ -3,65 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - AlpineTideTravel</title>
+    <title>Inquiry Received | AlpineTideTravel</title>
+    <meta name="description" content="Thank you for contacting AlpineTideTravel. We have received your accessible and sensory-friendly travel request.">
     <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="countdown-marquee" aria-label="Caribbean Princess countdown">
-        <div class="countdown-marquee-track" id="countdownMarqueeText">We are now proud to partner with WorldVia Travel Network</div>
+
+    <!-- Skip link for keyboard users -->
+    <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+    <div class="announcement-bar" role="text" aria-label="Network Announcement">
+        <div class="announcement-bar-track" id="countdownMarqueeText">We are now proud to partner with WorldVia Travel Network</div>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="nav-brand">
-            <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
-                <defs>
-                    <linearGradient id="oceanGradTY" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#023e8a"/>
-                        <stop offset="55%" stop-color="#00b4d8"/>
-                        <stop offset="100%" stop-color="#90e0ef"/>
-                    </linearGradient>
-                </defs>
-                <circle cx="32" cy="32" r="31" fill="url(#oceanGradTY)"></circle>
-                <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
-                <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
-            </svg>
-            AlpineTideTravel
+            <!-- Wrapped brand elements in an anchor for proper screen-reader navigation links -->
+            <a href="index.html" class="brand-link" aria-label="AlpineTideTravel - Home">
+                <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
+                    <defs>
+                        <linearGradient id="oceanGradTY" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#023e8a"/>
+                            <stop offset="55%" stop-color="#00b4d8"/>
+                            <stop offset="100%" stop-color="#90e0ef"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="32" cy="32" r="31" fill="url(#oceanGradTY)"></circle>
+                    <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
+                    <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
+                </svg>
+                <h1>AlpineTideTravel</h1>
+            </a>
         </div>
 
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
 
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="booking.html">Book Now</a></li>
-            <li><a href="index.html#quote-anchor">Request Quote</a></li>
         </ul>
     </nav>
 
-    <div class="notification-banner">
-        ✅ <strong>Thank you!</strong> Your message was sent successfully.
+    <!-- Success notification structured explicitly for clear reading accessibility -->
+    <div class="notification-banner" role="alert" style="text-align: center; background: #e6fbff; color: #023e8a; padding: 12px; font-weight: bold; border-bottom: 2px solid #cfe8ee;">
+        <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Your request was sent successfully!
     </div>
 
-    <main class="thank-you-wrap">
-        <section class="thank-you-card">
-            <div class="thank-you-badge"><i class="fa-solid fa-check"></i> Submission Received</div>
-            <h1>Thanks for reaching out</h1>
-            <p>
-                We’ve received your cruise inquiry and will review your trip details shortly.
-                If we need anything else, we’ll contact you by email or phone.
-            </p>
-            <p>
-                In the meantime, feel free to browse our booking page or return home.
-            </p>
+    <main class="thank-you-wrap" id="main-content">
+        <section class="thank-you-card" style="text-align: center; margin-top: 40px;">
+            <div class="thank-you-badge" style="color: #0a9396; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+                <i class="fa-solid fa-square-check" aria-hidden="true"></i> Submission Secured
+            </div>
+            
+            <h1 style="margin-top: 10px;">Your Travel Request is Under Review</h1>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 20px;">Thank you for sharing your trip details and accommodation criteria with us.</p>
+            
+            <!-- Predictability box mapping out explicitly what happens next to lower client friction -->
+            <div style="background: #fdfcf7; border: 1px dashed #7fa5ad; border-radius: 12px; padding: 20px; max-width: 600px; margin: 0 auto 30px; text-align: left;">
+                <h2 style="font-size: 1rem; color: #023e8a; margin-top: 0;"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> What Happens Next?</h2>
+                <ul style="margin: 8px 0 0 20px; padding: 0; line-height: 1.5;">
+                    <li><strong>Reviewing Protocols:</strong> We will cross-reference your family's sensory or physical criteria with our specialized WorldVia networks.</li>
+                    <li><strong>Response Window:</strong> Jason will personally contact you by email or phone within <strong>24 to 48 business hours</strong>.</li>
+                    <li><strong>Privacy Assurance:</strong> All behavioral, sensory, or medical notes submitted are kept strictly secure and confidential.</li>
+                </ul>
+            </div>
 
             <div class="thank-you-actions">
-                <a href="index.html" class="thank-you-btn">Return to Home</a>
-                <a href="booking.html" class="thank-you-btn secondary">Book Now</a>
+                <a href="index.html" class="thank-you-btn" style="text-decoration: none;">Return to Home</a>
+                <a href="booking.html" class="thank-you-btn secondary" style="text-decoration: none; margin-left: 10px;">Book Now</a>
             </div>
         </section>
     </main>
@@ -69,9 +85,10 @@
     <hr class="main">
 
     <footer>
-        <div class="footer-logos">
-            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Carnival logo">
-            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Commodore insignia logo">
+        <div class="footer-socials" aria-label="Social media links">
+            <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://instagram.com/alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
         </div>
         <p>© 2026 AlpineTideTravel<br>
         Jason Reeves | Dallas, NC 28034</p>
@@ -80,9 +97,13 @@
         <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
         <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruise Lines, Ltd. Used with permission.</p>
         <p id="currentTime" class="end"></p>
-        <img class="diamond" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg">
+        <div class="footer-logos">
+            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Official graduate emblem badge for Carnival Cruise Line Diamond Level Expert Program">
+            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Official Commodore Insignia certification program achievement logo">
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
