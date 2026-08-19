@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking | Alpine Tide Travel</title>
-    <meta name="description" content="Book your next trip with Alpine Tide Travel. Share your travel date, budget, destination, and trip details in our booking form.">
+    <title>Vacation Intake Booking | Alpine Tide Travel</title>
+    <meta name="description" content="Ready to design your getaway? Complete our detailed, sensory-aware travel booking intake form to start planning with Alpine Tide Travel.">
     <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
 </head>
-<body id="top">
-    <div class="countdown-marquee" aria-label="Caribbean Princess countdown">
-        <div class="countdown-marquee-track" id="countdownMarqueeText"> "Alpine Tide Travel is a Proud Independent Agent of the WorldVia Travel Network"!</div>
+<body>
+
+    <!-- Skip link for keyboard/screen-reader navigation -->
+    <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+    <div class="announcement-bar" role="text" aria-label="Network Announcement">
+        <div class="announcement-bar-track" id="countdownMarqueeText">We are now proud to partner with WorldVia Travel Network</div>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="nav-brand">
-            <a href="index.html" class="brand-link" aria-label="Go to home">
+            <a href="index.html" class="brand-link" aria-label="Alpine Tide Travel - Home">
                 <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
                     <defs>
                         <linearGradient id="oceanGradBooking" x1="0%" y1="0%" y2="100%" x2="100%">
@@ -34,93 +38,127 @@
             </a>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="index.html#blog-anchor">Blog</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
         </ul>
     </nav>
 
-    <header class="site-header">
-        <hr class="main">
-        <h1 class="title">Booking</h1>
-        <p class="subtitle">Tell us about your trip and we’ll get back to you.</p>
-        <hr class="main">
-    </header>
+    <main id="main-content">
+        <header class="site-header">
+            <hr class="main">
+            <h1 class="title">Vacation Booking Intake</h1>
+            <p class="subtitle">Provide your primary party criteria below, and we will construct a seamless, customized layout for your trip.</p>
+            <hr class="main">
+        </header>
 
-    <main class="package-form-wrap">
-        <section class="package-form-card">
-            <div class="package-badge">Booking and Trip Inquiry Form</div>
-            <p>Please complete the form below to start your request.</p>
+        <div class="package-form-wrap">
+            <section class="package-form-card">
+                <div class="package-badge" style="background-color: #023e8a; color: white; padding: 6px 12px; border-radius: 6px; display: inline-block; font-weight: bold; margin-bottom: 14px;">Intake Protocol Form</div>
+                <p style="margin-top: 0;">Please complete the form fields below to start your specialized reservation profile request.</p>
 
-            <form id="packageInquiryForm" name="package-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="package-inquiry">
+                <form id="packageInquiryForm" name="package-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="package-inquiry">
 
-                <p class="hidden">
-                    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
-                </p>
+                    <p class="hidden" style="display:none;">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                    </p>
 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" name="name" required>
-                    </div>
+                    <!-- Section 1: Contact Logistics -->
+                    <fieldset style="border: 2px solid #cfe8ee; border-radius: 12px; padding: 20px; margin-bottom: 24px; background: #ffffff;">
+                        <legend style="font-weight: bold; color: #023e8a; padding: 0 10px;">Primary Contact Details</legend>
+                        <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="name" required placeholder="John Doe">
+                            </div>
 
-                    <div class="form-group">
-                        <label for="emailAddress">Email Address</label>
-                        <input type="email" id="emailAddress" name="email" required>
-                    </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="email" id="emailAddress" name="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                    </fieldset>
 
-                    <div class="form-group">
-                        <label for="travelDate">Estimated Travel Date</label>
-                        <input type="date" id="travelDate" name="travel_date">
-                    </div>
+                    <!-- Section 2: Core Travel Variables -->
+                    <fieldset style="border: 2px solid #cfe8ee; border-radius: 12px; padding: 20px; margin-bottom: 24px; background: #ffffff;">
+                        <legend style="font-weight: bold; color: #023e8a; padding: 0 10px;">Vacation Parameters</legend>
+                        <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+                            <div class="form-group">
+                                <label for="travelDate">Estimated Departure Date</label>
+                                <input type="date" id="travelDate" name="travel_date">
+                            </div>
 
-                    <div class="form-group">
-                        <label for="budgetSelect">Estimated Budget per Person</label>
-                        <select id="budgetSelect" name="budget">
-                            <option value="moderate">Moderate</option>
-                            <option value="luxury">Luxury</option>
-                            <option value="ultra-luxury">Ultra-Luxury / Custom</option>
-                        </select>
-                    </div>
+                            <div class="form-group">
+                                <label for="budgetSelect">Estimated Budget per Person</label>
+                                <select id="budgetSelect" name="budget">
+                                    <option value="moderate">Moderate ($1,500 - $3,000)</option>
+                                    <option value="luxury">Luxury ($3,000 - $6,000)</option>
+                                    <option value="ultra-luxury">Ultra-Luxury / Custom ($6,000+)</option>
+                                </select>
+                            </div>
 
-                    <div class="form-group full">
-                        <label for="destination">Preferred Destination / Details</label>
-                        <textarea id="destination" name="destination" required placeholder="Tell us where you want to go and any trip details."></textarea>
-                    </div>
+                            <div class="form-group">
+                                <label for="totalTravelers">Total Travelers</label>
+                                <select id="totalTravelers" name="total_travelers">
+                                    <option value="1">1 Traveler</option>
+                                    <option value="2" selected>2 Travelers</option>
+                                    <option value="3">3 Travelers</option>
+                                    <option value="4">4 Travelers</option>
+                                    <option value="5+">5+ Travelers (Family Group)</option>
+                                </select>
+                            </div>
 
-                    <div class="form-group full">
-                        <label for="notes">Additional Notes</label>
-                        <textarea id="notes" name="notes" placeholder="Tell us what you want included, who is traveling, cabin preferences, etc."></textarea>
-                    </div>
+                            <div class="form-group">
+                                <label for="childTravelers">Children (Under 18)</label>
+                                <select id="childTravelers" name="child_travelers">
+                                    <option value="0" selected>0 Children</option>
+                                    <option value="1">1 Child</option>
+                                    <option value="2">2 Children</option>
+                                    <option value="3+">3+ Children</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Preferred Mode Segment -->
+                        <div class="form-group" style="margin-top: 14px; text-align: left;">
+                            <label style="display: block; margin-bottom: 8px;">Preferred Travel Experience</label>
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                                    <input type="radio" name="travel_type" value="cruise" checked style="width: auto; margin: 0;"> Cruise Vacations
+                                </label>
+                                <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                                    <input type="radio" name="travel_type" value="resort" style="width: auto; margin: 0;"> All-Inclusive Resorts
+                                </label>
+                                <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                                    <input type="radio" name="travel_type" value="land" style="width: auto; margin: 0;"> Escorted Land Tours
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                                       <!-- Section 3: Deep Context Textareas -->
+                    <fieldset style="border: 2px solid #cfe8ee; border-radius: 12px; padding: 20px; margin-bottom: 24px; background: #ffffff;">
+                        <legend style="font-weight: bold; color: #023e8a; padding: 0 10px;">Destination & Accommodation Scope</legend>
+                        <div class="form-group full" style="text-align: left;">
+                            <label for="destination">Target Destinations or Cruise Lines</label>
+                            <textarea id="destination" name="destination" required placeholder="Examples: Caribbean, Alaska, CocoCay, specific ships, or environmental features your family enjoys..."></textarea>
+                        </div>
+
+                        <div class="form-group full" style="text-align: left; margin-top: 14px;">
+                            <label for="notes">Niche Support Profiles & Specific Requests</label>
+                            <textarea id="notes" name="notes" placeholder="Please tell us about travelers requiring special care, cabin proximity preferences (e.g., close to elevators, quiet zones), or specific sensory strategies we should account for..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- CORRECTED BUTTON WITH PROPER LAYOUT CLOSURES -->
+                    <button type="submit" class="submit-btn" style="width: 100%; max-width: 300px; margin: 10px auto; display: block;">Submit Booking Intake</button>
+                </form>
+
+                <div style="margin-top: 20px; text-align: left;">
+                    <a href="index.html" class="back-link" style="text-decoration: none; color: #023e8a; font-weight: bold;">← Back to Home</a>
                 </div>
 
-                <button type="submit" class="submit-btn">Submit Request</button>
-            </form>
-
-            <a href="index.html" class="back-link">← Back to Home</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2026 Alpine Tide Travel<br>
-        Jason Reeves | Dallas, NC 28034</p>
-        <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
-        <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
-        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
-        <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruise Lines, Ltd. Used with permission.</p>
-        <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
-        <p id="currentTime" class="end"></p>
-        <div class="footer-logos">
-            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Carnival logo">
-            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Commodore insignia logo">
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
