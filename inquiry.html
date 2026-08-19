@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inquiry - AlpineTideTravel</title>
+    <title>Specialized Travel Inquiry | AlpineTideTravel</title>
+    <meta name="description" content="Submit a travel planning request for autism-friendly vacations, sensory-aware cruises, or custom accessible land trips.">
     <link rel="icon" type="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/svgs/solid/anchor.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
 </head>
-<body id="top">
-    <div class="announcement-bar" aria-label="Travel announcement">
+<body>
+
+    <!-- Skip link for keyboard/screen-reader navigation -->
+    <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+    <div class="announcement-bar" role="text" aria-label="Network Announcement">
         <div class="announcement-bar-track" id="countdownMarqueeText">We are now proud to partner with WorldVia Travel Network!</div>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main Navigation">
         <div class="nav-brand">
-            <a href="index.html" class="brand-link" aria-label="Go to home">
+            <a href="index.html" class="brand-link" aria-label="AlpineTideTravel - Home">
                 <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
                     <defs>
                         <linearGradient id="oceanGradInquiry" x1="0%" y1="0%" y2="100%" x2="100%">
@@ -34,7 +39,7 @@
         </div>
 
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
         </button>
 
         <ul class="nav-links" id="navLinks">
@@ -44,80 +49,98 @@
         </ul>
     </nav>
 
-    <header class="site-header">
-        <hr class="main">
-        <h1 class="title">General Inquiry</h1>
-        <p class="subtitle">Tell us about your trip, blog idea, pictures, or videos and we’ll get back to you.</p>
-        <hr class="main">
-    </header>
+    <main id="main-content">
+        <header class="site-header">
+            <hr class="main">
+            <h1 class="title">Travel Planning Inquiry</h1>
+            <p class="subtitle">Tell us about your trip dynamics and special accommodation needs, and we'll engineer the perfect getaway.</p>
+            <hr class="main">
+        </header>
 
-    <section class="inquiry-container">
-        <h2>Contact Me</h2>
-        <p>Use this form for cruise questions, travel planning, photo submissions, video ideas, or blog suggestions.</p>
+        <section class="inquiry-container">
+            <h2>Sensory-Aware & Accessible Travel Planning</h2>
+            <p>Use this form to share cruise goals, land destinations, or custom special needs vacation criteria.</p>
 
-        <form id="travelInquiryForm" name="general-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="general-inquiry">
-            <p class="hidden">
-                <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
-            </p>
+            <form id="travelInquiryForm" name="general-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="general-inquiry">
+                <p class="hidden" style="display:none;">
+                    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                </p>
 
-            <div class="form-group-row">
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="name" required placeholder="John Doe">
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input type="email" id="emailAddress" name="email" required placeholder="john@example.com">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="emailAddress">Email Address</label>
-                    <input type="email" id="emailAddress" name="email" required placeholder="john@example.com">
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="travelDate">Estimated Travel Date</label>
+                        <input type="date" id="travelDate" name="travel_date">
+                    </div>
+                    <div class="form-group">
+                        <label for="budgetSelect">Estimated Budget per Person</label>
+                        <select id="budgetSelect" name="budget">
+                            <option value="moderate">Moderate</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="ultra-luxury">Ultra-Luxury / Custom</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required placeholder="How can we help?">
-            </div>
+                <!-- Custom niche field block: Accessibility & Sensory Profiling -->
+                <fieldset style="border: 2px solid #cfe8ee; border-radius: 12px; padding: 20px; margin-bottom: 24px; background: #ffffff;">
+                    <legend style="font-weight: bold; color: #023e8a; padding: 0 10px;">Sensory & Accessibility Requirements (Optional)</legend>
+                    <p style="margin-top: 0; font-size: 0.95rem; color: #555;">Select any features or accommodations that would make your trip safer and more comfortable:</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; text-align: left;">
+                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="accommodation[]" value="autism-certified" style="width: auto; margin: 0;"> Certified Autism Staff/Resorts
+                        </label>
+                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="accommodation[]" value="quiet-dining" style="width: auto; margin: 0;"> Low-Sensory/Quiet Dining
+                        </label>
+                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="accommodation[]" value="dietary-needs" style="width: auto; margin: 0;"> Special Dietary/GF/Allergies
+                        </label>
+                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="accommodation[]" value="mobility-access" style="width: auto; margin: 0;"> Physical Mobility/ADA Access
+                        </label>
+                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="accommodation[]" value="predictable-pacing" style="width: auto; margin: 0;"> Low-Crowd/Structured Pacing
+                        </label>
+                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" name="accommodation[]" value="sensory-room" style="width: auto; margin: 0;"> Quiet Spaces/Sensory Rooms
+                        </label>
+                    </div>
+                </fieldset>
 
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" required placeholder="Tell us about your trip, idea, or question..."></textarea>
-            </div>
-
-            <div class="form-group-row">
                 <div class="form-group">
-                    <label for="travelDate">Estimated Travel Date</label>
-                    <input type="date" id="travelDate" name="travel_date">
+                    <label for="message">Trip Goals & Specific Needs</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Tell us about the travelers, any specific environmental preferences, or sensory challenges we can manage for you..."></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="budgetSelect">Estimated Budget per Person</label>
-                    <select id="budgetSelect" name="budget">
-                        <option value="moderate">Moderate</option>
-                        <option value="luxury">Luxury</option>
-                        <option value="ultra-luxury">Ultra-Luxury / Custom</option>
-                    </select>
-                </div>
-            </div>
 
-            <button type="submit" class="submit-btn">Submit Request</button>
-        </form>
-    </section>
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </section>
+    </main>
 
     <hr class="main">
 
     <footer>
+        <div class="footer-socials" aria-label="Social media links">
+            <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://instagram.com/alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
         <p>© 2026 AlpineTideTravel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
         <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
         <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
-        <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruise Lines, Ltd. Used with permission.</p>
-        <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
-        <p id="currentTime" class="end"></p>
-        <div class="footer-logos">
-            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Carnival logo">
-            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Commodore insignia logo">
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
