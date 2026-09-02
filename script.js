@@ -5,7 +5,7 @@
 function updateBannerText() {
     const marqueeElement = document.getElementById("countdownMarqueeText");
     if (marqueeElement) {
-        marqueeElement.textContent = "We are now proud to partner with WorldVia Travel Network!";
+        marqueeElement.textContent = "Welcome to your next adventure!";
     }
 }
 
