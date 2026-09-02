@@ -4,7 +4,6 @@ A simple cruise travel website with:
 
 - Home page
 - About Us page
-- Booking page
 - Contact and inquiry forms
 - Blog and blog article pages
 - Port information page
@@ -19,7 +18,6 @@ A simple cruise travel website with:
 
 - `index.html` — Home page
 - `about.html` — About Us page
-- `booking.html` — Booking page
 - `thankyou.html` — Booking confirmation page
 - `terms.html` — Terms and conditions
 - `inquiry.html` — Inquiry/contact form
@@ -64,7 +62,6 @@ Open `index.html` in a browser, or use OneCompiler / any static web server.
 /
 ├── index.html
 ├── about.html
-├── booking.html
 ├── thankyou.html
 ├── terms.html
 ├── inquiry.html
