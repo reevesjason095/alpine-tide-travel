@@ -11,11 +11,24 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
     background: linear-gradient(180deg, #f4f1ea 0%, #eef2ef 100%);
     padding-top: 92px;
     padding-bottom: 60px;
     color: #222222;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+/* Sensory Update: Softened global image border weight and color */
+img {
+    border: 1px solid #a3b8cc;
+    border-radius: 12px;
+}
+
+/* Sensory Update: Softened video-card border color */
+.video-card {
+    border: 1px solid #7a8a90;
     box-sizing: border-box;
     line-height: 1.6;
     letter-spacing: 0.01em;
@@ -39,6 +52,19 @@ img {
     box-sizing: border-box;
 }
 
+/* Sensory Update: Prevent future animations or smooth jumps from triggering motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+}
+
 .site-header,
 .gallery-section,
 .video-section,
@@ -56,7 +82,6 @@ img {
     width: min(1100px, 92%);
     margin-left: auto;
     margin-right: auto;
-    box-sizing: border-box;
     max-width: 100%;
 }
 
@@ -67,11 +92,15 @@ img {
     max-width: 100%;
 }
 
+.blog-section {
+    text-align: left;
+}
+
 .blog-section .media-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    display: flex;
+    justify-content: center;
     align-items: stretch;
+    width: 100%;
 }
 
 /* Single blog post full width */
@@ -84,6 +113,14 @@ img {
 }
 
 .blog-section .media-card {
+    width: min(100%, 980px);
+    background: #fbfbfa;
+    border: 1px solid #d9e5e8;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 95, 115, 0.06);
+    padding: 20px;
+    text-align: left;
+    margin: 0 auto;
     background: #dfdcdc;
     border: 5px solid #cfe8ee;
     border-radius: 18px;
@@ -97,6 +134,87 @@ img {
     padding: 0;
 }
 
+.blog-section .media-caption,
+.blog-section .media-caption p,
+.blog-section .media-caption li {
+    color: #1f1f1f;
+}
+
+.blog-section .media-caption p {
+    margin: 0 0 1rem;
+}
+
+.blog-section .media-caption h1,
+.blog-section .media-caption h2,
+.blog-section .media-caption h3 {
+    margin-top: 1.15rem;
+    margin-bottom: 0.55rem;
+    line-height: 1.25;
+}
+
+.blog-section .media-caption ul {
+    text-align: left;
+    margin: 0 0 1rem 1.25rem;
+    padding-left: 1rem;
+}
+
+.blog-section .media-caption li {
+    margin-bottom: 0.55rem;
+}
+
+.blog-section .media-caption .cta-box {
+    border-radius: 14px;
+    background: #f4f6f8;
+    border-left: 5px solid #2b5c8f;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.blog-section .media-caption .article-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0.75rem 0 1rem;
+    border-radius: 12px;
+}
+/* Accessible text invisible to the eye but perfectly readable by screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* Sensory Update: Muted CTA link background and text contrast */
+.page-cta {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #f0fafc;
+    border: 1px solid #bfe0e7;
+    color: #1a5276;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Skip link styling for keyboard navigation */
+.skip-link:focus {
+    top: 0 !important;
+    outline: 3px solid #2b6cb0 !important; /* Softened blue */
+    outline-offset: 0 !important;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ==========================================================================
+   2. NAVBAR STRUCTURE
+   ========================================================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -104,11 +222,10 @@ img {
     gap: 12px;
     padding: 8px 18px;
     position: fixed;
-    top: 36px !important;
+    top: 36px;
     left: 0;
     right: 0;
     width: 100%;
-    box-sizing: border-box;
     z-index: 1200;
     background: #fbfaf7;
     border-bottom: 1px solid #d8ddd8;
@@ -160,38 +277,44 @@ img {
     display: none;
 }
 
-.countdown-marquee {
+/* ==========================================================================
+   3. ANNOUNCEMENT BAR
+   ========================================================================== */
+/* Sensory Update: Replaced the loud multi-color gradient with a clean, calming solid shade */
+.announcement-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1300;
-    background: linear-gradient(90deg, #023e8a, #0077b6, #00b4d8);
+    background: #1e3a5f; 
     color: #fff;
     overflow: hidden;
     white-space: nowrap;
     padding: 8px 0;
-    font-weight: 700;
+    font-weight: 600;
     height: 36px;
-    box-sizing: border-box;
 }
 
-.countdown-marquee-track {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marqueeMove 18s linear infinite;
+.announcement-bar-track {
+    display: block;
+    padding-left: 0;
+    animation: none;
+    text-align: center;
+    width: 100%;
 }
 
-@keyframes marqueeMove {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
+/* ==========================================================================
+   4. INTERACTIVE ELEMENTS & FORMS
+   ========================================================================== */
+/* Sensory Update: Softened global image border weight on footer elements */
 footer img,
 .footer img,
 .footer-logo {
     width: 140px;
     height: auto;
+    border: 1px solid #718070;
+    border-radius: 10px;
     border: 5px solid #70806c;
 }
 
@@ -295,76 +418,126 @@ html {
     scroll-behavior: auto;
 }
 
-@media screen and (max-width: 1024px) {
-    .blog-section .media-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 10px 0 14px;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        padding-top: 88px;
-    }
+/* Sensory Update: Muted social link color intensity */
+.footer-socials a {
+    color: #2b5c8f;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
 
+.footer-links {
+    margin: 6px 0;
+}
     .countdown-marquee {
         font-size: 0.9rem;
         padding: 7px 12px;
         height: 32px;
     }
 
-    .navbar {
-        padding: 8px 14px;
-        top: 32px !important;
-    }
+/* Sensory Update: Toned down color brightness for utility links */
+.footer-links a,
+.card-btn {
+    color: #2b5c8f;
+    font-weight: 700;
+    text-decoration: none;
+}
 
-    .nav-brand h1 {
-        font-size: 0.95rem;
-        line-height: 1.1;
-        white-space: nowrap;
-    }
+/* Sensory Update: Calmed background tone of utility layout cards */
+.card-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #f0fafc;
+    border: 1px solid #bfe0e7;
+}
 
-    .site-logo {
-        width: 32px;
-        height: 32px;
-    }
+.home-intro,
+.home-links,
+.featured-image,
+.about-section,
+.legal-wrap,
+.thank-you-wrap,
+.package-form-wrap {
+    width: min(900px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1250;
-    }
+.about-card,
+.thank-you-card,
+.booking-closed,
+.legal-wrap,
+.package-form-card {
+    background: #ffffff;
+    border: 1px solid #cfe8ee;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 95, 115, 0.08);
+    padding: 32px 24px;
+}
 
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: min(84vw, 280px);
-        height: calc(100vh - 32px);
-        padding: 18px;
-        position: fixed;
-        top: 32px !important;
-        right: 0;
-        background: #8a9b8f;
-        box-shadow: -8px 0 20px rgba(0, 0, 0, 0.15);
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 1100;
-        align-items: flex-start;
-        justify-content: flex-start;
-        box-sizing: border-box;
-        overflow-y: auto;
-    }
+/* Sensory Update: Changed buttons from a dynamic high-contrast linear gradient to a solid, grounded tone */
+.home-link-btn,
+.thank-you-btn,
+.about-home-btn,
+.booking-closed .cta-btn,
+.legal-home-btn,
+.submit-btn {
+    display: inline-block;
+    background: #237a7c;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 0;
+    cursor: pointer;
+}
 
-    .nav-links.show {
-        transform: translateX(0);
-    }
+/* Sensory Update: Darker states on button interactions feel solid without sudden lighting flashes */
+.home-link-btn:hover,
+.thank-you-btn:hover,
+.submit-btn:hover {
+    background: #1b5c5e;
+}
 
-    .nav-links a {
-        color: #ffffff;
-        font-size: 1rem;
-    }
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #cfe8ee;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 1rem;
+    color: #222222;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    font-family: inherit;
+    line-height: 1.4;
+}
 
+textarea {
+    min-height: 120px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    color: #222222;
+    margin-top: 14px;
+}
     .blog-section .media-grid,
     .gallery-section .media-grid,
     .media-grid {
@@ -373,18 +546,86 @@ html {
         align-items: stretch;
     }
 
-    .blog-section .media-card,
-    .gallery-section .media-card,
+.footer-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+a, button, input, select, textarea {
+    transition: outline-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+/* Sensory Update: Replaced the bright focal blue outline with a gentle slate-blue ring */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #5499c7;
+    outline-offset: 3px;
+    background-color: #f7fcfe;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Gallery / Media sizing tweaks
+   - Constrain media cards to a comfortable width
+   - Ensure images shrink responsively and don't overwhelm the layout
+   - Use grid for gallery areas so items wrap cleanly on narrow screens
+   -------------------------------------------------------------------------- */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    align-items: start;
+}
+
+.media-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 380px; /* keeps cards reasonably narrow */
+    margin: 0 auto;
+}
+
+.media-card img {
+    width: 100%;
+    max-width: 360px; /* prevents images from growing too large */
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 8px auto;
+}
+
+/* allow iframes (videos) to scale but not exceed a comfortable width */
+.media-card iframe {
+    max-width: 560px;
+    width: 100%;
+    height: auto;
+}
+
+/* Make featured video embeds a bit larger */
+.video-card iframe {
+    max-width: 1020px;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 900px) {
+    /* for wider viewports, allow more columns but keep card sizing consistent */
+    .media-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+    }
     .media-card {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .thank-you-wrap {
-        width: min(100%, 100%);
-        padding: 28px 12px;
-    }
-
+        max-width: 420px;
     .form-grid {
         grid-template-columns: 1fr;
     }

@@ -1,34 +1,11 @@
-// Target date: August 23, 2026 at 11:00 AM Eastern Time
-const cruiseDate = new Date("2026-08-23T11:00:00-04:00");
+/* ==========================================================================
+   SENSORY-FRIENDLY & ACCESSIBLE SITE ARCHITECTURE
+   ========================================================================== */
 
-function updateCountdown() {
-    const timerElement = document.getElementById("timer");
+function updateBannerText() {
     const marqueeElement = document.getElementById("countdownMarqueeText");
-
-    const now = new Date();
-    const difference = cruiseDate - now;
-
-    let message = "";
-
-    if (difference <= 0) {
-        message = "Countdown complete - sailing day is here!";
-        if (timerElement) {
-            timerElement.textContent = message;
-        }
-    } else {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        message = `${days}d ${hours}h ${minutes}m ${seconds}s until Caribbean Princess departure, Join us for our 21st Anniversary Cruise`;
-
-        if (timerElement) {
-            timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-    }
-
     if (marqueeElement) {
-        marqueeElement.textContent = message;
+        marqueeElement.textContent = "Welcome to your next adventure!";
     }
 }
 
@@ -44,12 +21,16 @@ function updateLocalClock() {
         day: "numeric",
         hour: "2-digit",
         minute: "2-digit",
-        second: "2-digit",
+        // Sensory Update: Removed seconds to eliminate constant flickering visual movement
         hour12: true
     };
 
     const easternTime = now.toLocaleString("en-US", dateTimeOptions);
-    clockElement.innerHTML = `Current Local Time: ${easternTime} ET`;
+    clockElement.textContent = `Current Local Time: ${easternTime} ET`;
+}
+
+function runCentralLayoutTick() {
+    updateLocalClock();
 }
 
 const topButton = document.getElementById("backToTopBtn");
@@ -58,21 +39,27 @@ const navLinks = document.getElementById("navLinks");
 
 function toggleTopButton() {
     if (!topButton) return;
-    if (window.scrollY > 300 || document.documentElement.scrollTop > 300) {
-        topButton.style.setProperty("display", "flex", "important");
+    const shouldShow = window.scrollY > 300 || document.documentElement.scrollTop > 300;
+    
+    // Accessibility Update: Toggles visibility while ensuring keyboard tabbing ignores hidden buttons
+    if (shouldShow) {
+        topButton.style.display = "flex";
+        topButton.removeAttribute("tabindex");
     } else {
-        topButton.style.setProperty("display", "none", "important");
+        topButton.style.display = "none";
+        topButton.setAttribute("tabindex", "-1");
     }
 }
 
 function toggleMenu() {
     if (!menuToggle || !navLinks) return;
-    navLinks.classList.toggle("show");
-    const expanded = navLinks.classList.contains("show");
-    menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-    menuToggle.innerHTML = expanded
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
+    const isOpen = navLinks.classList.toggle("show");
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    
+    // Accessibility Update: Included clear screen-reader fallback labels alongside the visual icons
+    menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i><span class="sr-only">Close navigation menu</span>'
+        : '<i class="fa-solid fa-bars" aria-hidden="true"></i><span class="sr-only">Open navigation menu</span>';
 }
 
 if (menuToggle) {
@@ -87,41 +74,20 @@ if (navLinks) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const travelStyleSelect = document.getElementById("travelStyle");
-    const dynamicDestinationDiv = document.getElementById("dynamicDestination");
-    const destinationLabel = document.getElementById("destinationLabel");
-    const destinationInput = document.getElementById("destination");
-
-    if (!travelStyleSelect || !dynamicDestinationDiv || !destinationLabel || !destinationInput) return;
-
-    travelStyleSelect.addEventListener("change", (e) => {
-        const selection = e.target.value;
-
-        dynamicDestinationDiv.classList.remove("hidden");
-
-        if (selection === "alpine") {
-            destinationLabel.textContent = "Which mountain range or resort?";
-            destinationInput.placeholder = "e.g., Great Smoky Mountains, Aspen, Swiss Alps";
-        } else if (selection === "tide") {
-            destinationLabel.textContent = "Which cruise line, island, or beach destination?";
-            destinationInput.placeholder = "e.g., Princess Cruises, St. Lucia, Riviera Maya";
-        }
-    });
-});
-
 window.addEventListener("scroll", toggleTopButton);
 window.addEventListener("load", toggleTopButton);
 
 function scrollToTop() {
     window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: "auto" // Retained: Instant scroll prevents jarring vestibular movement
     });
 }
 
-updateCountdown();
-updateLocalClock();
+// Initial Run
+updateBannerText();
+runCentralLayoutTick();
 
-setInterval(updateCountdown, 1000);
-setInterval(updateLocalClock, 1000);
+// Sensory Update: Reduced polling frequency to 60000ms (1 minute) to avoid background thread processing noise
+setInterval(runCentralLayoutTick, 60000);
+

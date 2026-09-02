@@ -12,6 +12,7 @@
 <body>
 
     <!-- Accessibility skip link for mechanical tab key navigation loops -->
+    <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px'" onblur="this.style.top='-40px'">Skip to main content</a>
     <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px[...] 
 
     <div class="announcement-bar" role="text" aria-label="Network Announcement">
@@ -60,6 +61,10 @@
             <div class="media-grid">
                 <article class="media-card">
                     <div class="media-caption">
+                        <p>Traveling through an airport with sensory processing sensitivities or autism can feel incredibly overwhelming. Fortunately, there is a simple visual tool designed to quietly signal airport staff that you or your child might need a little extra grace.</p>
+
+                        <h2>What is the green lanyard with sunflowers?</h2>
+                        <p><strong>Clear answer first:</strong> It is the official symbol of the Hidden Disabilities Sunflower Program, a free initiative that discreetly signals to trained airport staff, flight crews, and TSA agents that a traveler has an invisible disability and may require extra time, patience, or clearer communication.</p>
                         <p>Traveling through an airport with sensory processing sensitivities or autism can feel incredibly overwhelming. Fortunately, there is a simple visual tool designed to quietly[...]</p>
 
                         <h2>What is the green lanyard with sunflowers?</h2>
@@ -68,6 +73,9 @@
                         <h2>Essential Lanyard Rules to Know Before You Go</h2>
                         <ul>
                             <li><strong>It is completely free:</strong> You never have to pay for a lanyard, provide medical documentation, or disclose a specific diagnosis to receive one.</li>
+                            <li><strong>It is not a "fast pass":</strong> The lanyard does not allow you to skip security queues or bypass standard TSA regulations. It simply changes how staff interact with and guide you through those spaces.</li>
+                            <li><strong>Where to pick them up:</strong> You can collect them at airport information desks, guest services, or ticketing counters.</li>
+                            <li><strong>Get it mailed early:</strong> Major international hubs like New York's JFK and LaGuardia may mail a lanyard to your home for free if you request one online in advance.</li>
                             <li><strong>It is not a "fast pass":</strong> The lanyard does not allow you to skip security queues or bypass standard TSA regulations. It simply changes how staff interac[...]
                             <li><strong>Where to pick them up:</strong> You can collect them at airport information desks, guest services, or ticketing counters.</li>
                             <li><strong>Get it mailed early:</strong> Major international hubs like New York's JFK and LaGuardia may mail a lanyard to your home for free if you request one online in a[...]
@@ -75,11 +83,13 @@
 
                         <h2>The Secret Weapon to Pair With It: TSA Cares</h2>
                         <p>To maximize airport support, always combine the Sunflower Lanyard with the free federal TSA Cares program.</p>
+                        <p>By calling the TSA Cares helpline at <a href="tel:8557872227" style="font-weight: bold; color: #023e8a;">(855) 787-2227</a> at least 72 hours before your flight, TSA can assign a dedicated Passenger Support Specialist to help guide your family through screening.</p>
                         <p>By calling the TSA Cares helpline at <a href="tel:8557872227" style="font-weight: bold; color: #023e8a;">(855) 787-2227</a> at least 72 hours before your flight, TSA can ass[...]</p>
 
                         <!-- Utilized your pre-existing .cta-box style properties to clean up formatting -->
                         <div class="cta-box">
                             <h3 style="margin-top: 0; color: #023e8a;"><i class="fa-solid fa-compass" aria-hidden="true"></i> Ready to Plan Your Next Journey?</h3>
+                            <p>If you would like help planning a highly customized, sensory-friendly land package or all-inclusive vacation, contact Alpine Tide Travel at <a href="mailto:jasonreeves@alpinetidetravel.com" style="color: #0a9396; font-weight: bold;">jasonreeves@alpinetidetravel.com</a>.</p>
                             <p>If you would like help planning a highly customized, sensory-friendly land package or all-inclusive vacation, contact Alpine Tide Travel at <a href="mailto:jasonreeves@a[...]
                         </div>
 
@@ -97,12 +107,21 @@
     <footer>
         <div class="footer-socials" aria-label="Social media links">
             <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
             <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i[...]
             <a href="https://instagram.com/alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
         </div>
         <p>© 2026 Alpine Tide Travel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
+        <p class="footer-notice">AlpineTideTravel is an independent agency associated with WorldVia Travel Network.</p>
+        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Iowa 924, Washington 602864166 (UBI).</p>
+        <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruise Lines, Ltd. Used with permission.</p>
+        <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
+        <p id="currentTime" class="end"></p>
+        <div class="footer-logos">
+            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Official graduate emblem badge for Carnival Cruise Line Diamond Level Expert Program">
+            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Official Commodore Insignia certification program achievement logo">
         <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
         <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
         <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks [...]

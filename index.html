@@ -21,6 +21,10 @@
 <body>
 
     <!-- Skip link for keyboard users navigating your specialized layout -->
+    <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px'" onblur="this.style.top='-40px'">Skip to main content</a>
+
+    <div class="announcement-bar" role="text" aria-label="Network Announcement">
+        <div class="announcement-bar-track" id="countdownMarqueeText">Welcome to your next adventure!</div>
     <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px[...] 
 
     <div class="announcement-bar" role="text" aria-label="Network Announcement">
@@ -69,6 +73,11 @@
         </header>
 
         <!-- Sensory Update: Added the calming parent-reassurance section to smooth user anxiety -->
+        <section class="reassurance-section" style="background-color: #ffffff; border: 1px solid #cfe8ee; padding: 30px 24px; text-align: center; border-radius: 16px; margin: 0 auto 40px; width: min(100% - 48px, 800px);">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <h2 style="color: #222222; font-size: 1.4rem; margin-top: 0; margin-bottom: 12px; font-weight: 700;">A Calm, Family-Friendly Planning Experience</h2>
+                <p style="color: #444444; font-size: 1.05rem; line-height: 1.6; margin: 0;">
+                    We keep the process simple, supportive, and completely predictable. We deeply understand that sensory needs and travel preferences vary, and we are here to help your family navigate every step with confidence and care.
         <section class="reassurance-section" style="background-color: #ffffff; border: 1px solid #cfe8ee; padding: 30px 24px; text-align: center; border-radius: 16px; margin: 0 auto 40px; width: min(1[...]
             <div style="max-width: 700px; margin: 0 auto;">
                 <h2 style="color: #222222; font-size: 1.4rem; margin-top: 0; margin-bottom: 12px; font-weight: 700;">A Calm, Family-Friendly Planning Experience</h2>
@@ -85,6 +94,65 @@
 
             <div class="media-grid">
                 <div class="media-card">
+                    <img src="Sanjuanbuildings.jpg" alt="Scenic historic buildings in San Juan, Puerto Rico with colorful architecture overlooking calm coastal waters">
+                    <div class="media-caption">Beautiful San Juan</div>
+                </div>
+
+                <div class="media-card">
+                    <img src="Ambercovelighthouse.jpg" alt="Picturesque lighthouse at Amber Cove with ocean sunset glow">
+                    <div class="media-caption">Amber Cove Lighthouse</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section" id="video-anchor" aria-labelledby="video-heading">
+            <div class="section-label">Video Gallery</div>
+            <h2 id="video-heading" class="gallery-title">Travel Stories in Motion</h2>
+            <p class="gallery-subtitle">Watch highlights from our cruise adventures and future land travel trips too.</p>
+
+            <div class="media-grid">
+                <div class="media-card video-card">
+                    <!-- Added a descriptive title to the iframe for screen readers -->
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Js-sc8ZRIGE" title="Video: Carnival Ecstasy 2018 Cruise Memories Throwback" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="media-caption">🎬 Throwback Sailing: Carnival Ecstasy 2018 Cruise Memories</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="destinations-section" id="destinations-anchor" aria-labelledby="destinations-heading">
+            <div class="section-label">Popular Destinations</div>
+            <h2 id="destinations-heading" class="gallery-title">Popular Travel Destinations</h2>
+            <p class="gallery-subtitle">Some of the most popular places travelers love to visit, by land or sea.</p>
+
+            <div class="media-grid">
+                <div class="media-card">
+                    <img src="Sanjuanbuildings.jpg" alt="Historic San Juan architecture and coastal Puerto Rico scenery perfect for Caribbean vacations">
+                    <div class="media-caption">Caribbean Islands</div>
+                </div>
+                <div class="media-card">
+                    <img src="Ambercovelighthouse.jpg" alt="Scenic Amber Cove port with lighthouse and calm ocean waters for cruise destination">
+                    <div class="media-caption">Cruise Port Destinations</div>
+                </div>
+                <div class="media-card">
+                    <img src="Ambercoveport.jpg" alt="Amber Cove port terminal and harbor area perfect for cruise ship boarding">
+                    <div class="media-caption">Amber Cove Port</div>
+                </div>
+            </div>
+        </section>
+        <div class="ml-embedded" data-form="HipPAf"></div>
+    </main>
+
+    <!-- Aria-label added to ensure the script trigger button is descriptive -->
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top" aria-label="Scroll back to top of the page">
+        Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <hr class="main">
+
+     <footer>
+        <div class="footer-socials" aria-label="Social media links">
+            <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
                     <img src="https://unsplash.com" alt="Scenic tropical overview of a historic fort overlooking calm coastal ocean blue waters in Puerto Rico">
                     <div class="media-caption">Beautiful Puerto Rico</div>
                 </div>
@@ -111,6 +179,14 @@
         <p>© 2026 Alpine Tide Travel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
+        <p class="footer-notice">AlpineTideTravel is an independent agency associated with WorldVia Travel Network.</p>
+        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Iowa 924, Washington 602864166 (UBI).</p>
+        <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruise Lines, Ltd. Used with permission.</p>
+        <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
+        <p id="currentTime" class="end"></p>
+        <div class="footer-logos">
+            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Official graduate emblem badge for Carnival Cruise Line Diamond Level Expert Program">
+            <img class="footer-logo footer-logo-right" src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/Commodoreinsignialogo.jpg" alt="Official Commodore Insignia certification program achievement logo">
         <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
         <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
         <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks [...]
