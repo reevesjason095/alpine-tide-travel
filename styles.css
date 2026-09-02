@@ -465,6 +465,13 @@ html {
     height: auto;
 }
 
+/* Make featured video embeds a bit larger */
+.video-card iframe {
+    max-width: 820px;
+    width: 100%;
+    height: auto;
+}
+
 @media (min-width: 900px) {
     /* for wider viewports, allow more columns but keep card sizing consistent */
     .media-grid {
