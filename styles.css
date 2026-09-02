@@ -426,3 +426,52 @@ textarea:focus {
 html {
     scroll-behavior: auto;
 }
+
+/* --------------------------------------------------------------------------
+   Gallery / Media sizing tweaks
+   - Constrain media cards to a comfortable width
+   - Ensure images shrink responsively and don't overwhelm the layout
+   - Use grid for gallery areas so items wrap cleanly on narrow screens
+   -------------------------------------------------------------------------- */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    align-items: start;
+}
+
+.media-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 380px; /* keeps cards reasonably narrow */
+    margin: 0 auto;
+}
+
+.media-card img {
+    width: 100%;
+    max-width: 360px; /* prevents images from growing too large */
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 8px auto;
+}
+
+/* allow iframes (videos) to scale but not exceed a comfortable width */
+.media-card iframe {
+    max-width: 560px;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 900px) {
+    /* for wider viewports, allow more columns but keep card sizing consistent */
+    .media-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+    }
+    .media-card {
+        max-width: 420px;
+    }
+}
