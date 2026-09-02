@@ -29,6 +29,23 @@ img {
 /* Sensory Update: Softened video-card border color */
 .video-card {
     border: 1px solid #7a8a90;
+    box-sizing: border-box;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+img {
+    border: 5px solid #326c7a;
+}
+
+.blog-section .media-card p,
+.blog-section .media-card strong {
+    color: #2b2b2b;
+   
+}
+
+.video-card {
+    border: 5px solid #282d2e;
 }
 
 *, *::before, *::after {
@@ -86,6 +103,15 @@ img {
     width: 100%;
 }
 
+/* Single blog post full width */
+.blog-section .media-grid:has(.media-card:only-child) {
+    grid-template-columns: 1fr;
+}
+
+.blog-section .media-grid:has(.media-card:only-child) .media-card {
+    max-width: 100%;
+}
+
 .blog-section .media-card {
     width: min(100%, 980px);
     background: #fbfbfa;
@@ -95,6 +121,13 @@ img {
     padding: 20px;
     text-align: left;
     margin: 0 auto;
+    background: #dfdcdc;
+    border: 5px solid #cfe8ee;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 95, 115, 0.08);
+    padding: 10px;
+    text-align: left;
+    
 }
 
 .blog-section .media-card .media-caption {
@@ -282,6 +315,107 @@ footer img,
     height: auto;
     border: 1px solid #718070;
     border-radius: 10px;
+    border: 5px solid #70806c;
+}
+
+.footer-links {
+    margin: 6px 0;
+}
+
+.footer-links a,
+.card-btn {
+    color: #023e8a;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.card-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #e6fbff;
+    border: 1px solid #cfe8ee;
+}
+
+.home-intro,
+.home-links,
+.featured-image,
+.about-section,
+.legal-wrap,
+.thank-you-wrap,
+.package-form-wrap {
+    width: min(900px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-card,
+.thank-you-card,
+.booking-closed,
+.legal-wrap,
+.package-form-card {
+    background: #ffffff;
+    border: 1px solid #cfe8ee;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 95, 115, 0.08);
+    padding: 32px 24px;
+}
+
+.home-link-btn,
+.thank-you-btn,
+.about-home-btn,
+.booking-closed .cta-btn,
+.legal-home-btn,
+.submit-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #0a9396 0%, #0077b6 100%);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 0;
+}
+
+.navbar .site-logo,
+.site-header .site-logo {
+    width: 32px;
+    height: 32px;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.footer-logo-left {
+    margin-right: auto;
+}
+
+.footer-logo-right {
+    margin-left: auto;
+}
+
+/* Sensory-friendly additions */
+a, button, input, select, textarea {
+    transition: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #023e8a;
+    outline-offset: 3px;
+}
+
+html {
+    scroll-behavior: auto;
 }
 
 .footer-socials {
@@ -301,6 +435,11 @@ footer img,
 .footer-links {
     margin: 6px 0;
 }
+    .countdown-marquee {
+        font-size: 0.9rem;
+        padding: 7px 12px;
+        height: 32px;
+    }
 
 /* Sensory Update: Toned down color brightness for utility links */
 .footer-links a,
@@ -399,6 +538,13 @@ label {
     color: #222222;
     margin-top: 14px;
 }
+    .blog-section .media-grid,
+    .gallery-section .media-grid,
+    .media-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
 
 .footer-logos {
     display: flex;
@@ -480,5 +626,52 @@ html {
     }
     .media-card {
         max-width: 420px;
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer img,
+    .footer img,
+    .footer-logo {
+        width: 100px;
+        margin: 8px 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .countdown-marquee-track {
+        animation: none !important;
+        padding-left: 0;
+    }
+}
+
+@media (prefers-contrast: more) {
+    body {
+        background: #ffffff;
+        color: #111111;
+    }
+
+    .navbar,
+    .blog-section .media-card,
+    .about-card,
+    .booking-closed,
+    .thank-you-card,
+    .package-form-card,
+    .legal-wrap {
+        box-shadow: none;
+        border-color: #000000;
     }
 }
