@@ -20,160 +20,145 @@
 </head>
 <body>
 
-    <!-- Skip link for keyboard users navigating your specialized layout -->
 <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100;">Skip to main content</a>
 
 <div class="announcement-bar" role="text" aria-label="Network Announcement">
     <div class="announcement-bar-track" id="countdownMarqueeText">Welcome to your next adventure!</div>
 </div>
- 
 
-    <nav class="navbar" aria-label="Main Navigation">
-        <div class="nav-brand">
-            <a href="#main-content" class="brand-link" aria-label="Alpine Tide Travel - Back to Home">
-                <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
-                    <defs>
-                        <linearGradient id="oceanGrad" x1="0%" y1="0%" y2="100%" x2="100%">
-                            <stop offset="0%" stop-color="#023e8a"/>
-                            <stop offset="55%" stop-color="#00b4d8"/>
-                            <stop offset="100%" stop-color="#90e0ef"/>
-                        </linearGradient>
-                    </defs>
-                    <circle cx="32" cy="32" r="31" fill="url(#oceanGrad)"></circle>
-                    <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
-                    <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
-                </svg>
-                <h1>Alpine Tide Travel</h1>
-            </a>
-        </div>
+<nav class="navbar" aria-label="Main Navigation">
+    <div class="nav-brand">
+        <a href="#main-content" class="brand-link" aria-label="Alpine Tide Travel - Back to Home">
+            <svg class="site-logo" viewBox="0 0 64 64" aria-hidden="true" role="img">
+                <defs>
+                    <linearGradient id="oceanGrad" x1="0%" y1="0%" y2="100%" x2="100%">
+                        <stop offset="0%" stop-color="#023e8a"/>
+                        <stop offset="55%" stop-color="#00b4d8"/>
+                        <stop offset="100%" stop-color="#90e0ef"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="32" cy="32" r="31" fill="url(#oceanGrad)"></circle>
+                <path d="M14 39 C20 35, 27 35, 33 39 C39 43, 46 43, 50 40" fill="none" stroke="#e0fbff" stroke-width="4" stroke-linecap="round"></path>
+                <path d="M17 29 L28 17 L35 25 L40 20 L50 31" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M18 45 C24 41, 30 41, 36 45 C41 48, 46 48, 49 46" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.9"></path>
+            </svg>
+            <h1>Alpine Tide Travel</h1>
+        </a>
+    </div>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-            <i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
-
-        <ul class="nav-links" id="navLinks">
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="#destinations-anchor">Destinations</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="inquiry.html">Inquiry</a></li>
-        </ul>
-    </nav>
-
-    <!-- Enclosing your primary viewable space inside a clean semantic tag -->
-    <main id="main-content">
-        <header class="site-header home-header">
-            <p>Welcome to Alpine Tide Travel!</p>
-            <hr>
-            <p class="subtitle home-tagline">Specializing in sensory-aware, autism-friendly, and custom special needs vacation planning by land or sea.</p>
-            <hr class="main">
-        </header>
-
-        <!-- Sensory Update: Added the calming parent-reassurance section to smooth user anxiety -->
-        <section class="reassurance-section" style="background-color: #ffffff; border: 1px solid #cfe8ee; padding: 30px 24px; text-align: center; border-radius: 16px; margin: 0 auto 40px; width: min(100% - 48px, 800px);">
-            <div style="max-width: 700px; margin: 0 auto;">
-                <h2 style="color: #222222; font-size: 1.4rem; margin-top: 0; margin-bottom: 12px; font-weight: 700;">A Calm, Family-Friendly Planning Experience</h2>
-                <p style="color: #444444; font-size: 1.05rem; line-height: 1.6; margin: 0;">
-                    We keep the process simple, supportive, and completely predictable. We deeply understand that sensory needs and travel preferences vary, and we are here to help your family navigate every step with care and expertise.
-                </p>
-            </div>
-        </section>
-
-        <section class="gallery-section" id="gallery-anchor" aria-labelledby="gallery-heading">
-            <div class="section-label">Photo Gallery</div>
-            <h2 id="gallery-heading" class="gallery-title">Our Favorite Travel Memories</h2>
-            <p class="gallery-subtitle">Take a look at some of our favorite travel memories from cruises and land trips.</p>
-
-            <div class="media-grid">
-                <div class="media-card">
-                    <img src="starting-over-balcony.jpg" alt="Beautiful view starting over balcony overlooking scenic coastal waters">
-                    <div class="media-caption">Starting Over Balcony</div>
-                </div>
-
-                <div class="media-card">
-                    <img src="boat-watching-from-grills-seafood.jpg" alt="Boat watching from Grills Seafood restaurant with ocean views">
-                    <div class="media-caption">Boat Watching from Grills Seafood</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="video-section" id="video-anchor" aria-labelledby="video-heading">
-            <div class="section-label">Video Gallery</div>
-            <h2 id="video-heading" class="gallery-title">Travel Stories in Motion</h2>
-            <p class="gallery-subtitle">Watch highlights from our cruise adventures and future land travel trips too.</p>
-
-            <div class="media-grid">
-                <div class="media-card video-card">
-                    <!-- Added a descriptive title to the iframe for screen readers -->
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Js-sc8ZRIGE" title="Video: Carnival Ecstasy 2018 Cruise Memories Throwback" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="media-caption">🎬 Throwback Sailing: Carnival Ecstasy 2018 Cruise Memories</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="destinations-section" id="destinations-anchor" aria-labelledby="destinations-heading">
-            <div class="section-label">Popular Destinations</div>
-            <h2 id="destinations-heading" class="gallery-title">Popular Travel Destinations</h2>
-            <p class="gallery-subtitle">Some of the most popular places travelers love to visit, by land or sea.</p>
-
-            <div class="media-grid">
-                <div class="media-card">
-                    <img src="starting-over-balcony.jpg" alt="Beautiful view starting over balcony perfect for Caribbean vacations">
-                    <div class="media-caption">Caribbean Islands</div>
-                </div>
-                <div class="media-card">
-                    <img src="boat-watching-from-grills-seafood.jpg" alt="Boat watching from Grills Seafood for cruise destination">
-                    <div class="media-caption">Cruise Port Destinations</div>
-                </div>
-                <div class="media-card">
-                    <img src="Ambercoveport.jpg" alt="Amber Cove port terminal and harbor area perfect for cruise ship boarding">
-                    <div class="media-caption">Amber Cove Port</div>
-                </div>
-            </div>
-        </section>
-        <div class="ml-embedded" data-form="HipPAf"></div>
-    </main>
-
-    <!-- Aria-label added to ensure the script trigger button is descriptive -->
-    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top" aria-label="Scroll back to top of the page">
-        Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
     </button>
 
-    <hr class="main">
+    <ul class="nav-links" id="navLinks">
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#destinations-anchor">Destinations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="inquiry.html">Inquiry</a></li>
+    </ul>
+</nav>
 
-     
-        
+<main id="main-content">
+    <header class="site-header home-header">
+        <p>Welcome to Alpine Tide Travel!</p>
+        <hr>
+        <p class="subtitle home-tagline">Specializing in sensory-aware, autism-friendly, and custom special needs vacation planning by land or sea.</p>
+        <hr class="main">
+    </header>
 
-               
-
-    
-
-    <footer>
-       <div class="footer-socials" aria-label="Social media links">
-  <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
-    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-  </a>
-  <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
-    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-  </a>
-  <a href="https://instagram.com/alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
-    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-  </a>
-</div>
-        <p>© 2026 Alpine Tide Travel<br>
-        Jason Reeves | Dallas, NC 28034</p>
-        <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
-        <p class="footer-notice">AlpineTideTravel is an independent agency associated with WorldVia Travel Network.</p>
-        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Iowa 924, Washington 602864166 (UBI).</p>
-        <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruises. All other trademarks are the property of their respective owners.</p>
-        <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
-        <p id="currentTime" class="end"></p>
-        <div class="footer-logos">
-            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Official graduate emblem badge for Carnival Cruise Line Diamond Level">
-            <img class="footer-logo footer-logo-right" src="https://www.worldviatravel.com/images/logo.png" alt="WorldVia Travel Network partner logo">
+    <section class="reassurance-section" style="background-color: #ffffff; border: 1px solid #cfe8ee; padding: 30px 24px; text-align: center; border-radius: 16px; margin: 0 auto 40px; width: min(100% - 48px, 800px);">
+        <div style="max-width: 700px; margin: 0 auto;">
+            <h2 style="color: #222222; font-size: 1.4rem; margin-top: 0; margin-bottom: 12px; font-weight: 700;">A Calm, Family-Friendly Planning Experience</h2>
+            <p style="color: #444444; font-size: 1.05rem; line-height: 1.6; margin: 0;">
+                We keep the process simple, supportive, and completely predictable. We deeply understand that sensory needs and travel preferences vary, and we are here to help your family navigate every step with care and expertise.
+            </p>
         </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="gallery-section" id="gallery-anchor" aria-labelledby="gallery-heading">
+        <div class="section-label">Photo Gallery</div>
+        <h2 id="gallery-heading" class="gallery-title">Our Favorite Travel Memories</h2>
+        <p class="gallery-subtitle">Take a look at some of our favorite travel memories from cruises and land trips.</p>
+
+        <div class="media-grid">
+            <div class="media-card">
+                <img src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/looking%20over%20the%20balcony.jpg" alt="Beautiful view looking over a balcony at scenic coastal waters">
+                <div class="media-caption">Looking Over the Balcony</div>
+            </div>
+
+            <div class="media-card">
+                <img src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/boat%20watching%20at%20Grills%20Seafood.jpg" alt="Boat watching at Grills Seafood restaurant with ocean views">
+                <div class="media-caption">Boat Watching at Grills Seafood</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section" id="video-anchor" aria-labelledby="video-heading">
+        <div class="section-label">Video Gallery</div>
+        <h2 id="video-heading" class="gallery-title">Travel Stories in Motion</h2>
+        <p class="gallery-subtitle">Watch highlights from our cruise adventures and future land travel trips too.</p>
+
+        <div class="media-grid">
+            <div class="media-card video-card">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Js-sc8ZRIGE" title="Video: Carnival Ecstasy 2018 Cruise Memories Throwback" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="media-caption">🎬 Throwback Sailing: Carnival Ecstasy 2018 Cruise Memories</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destinations-section" id="destinations-anchor" aria-labelledby="destinations-heading">
+        <div class="section-label">Popular Destinations</div>
+        <h2 id="destinations-heading" class="gallery-title">Popular Travel Destinations</h2>
+        <p class="gallery-subtitle">Some of the most popular places travelers love to visit, by land or sea.</p>
+
+        <div class="media-grid">
+            <div class="media-card">
+                <img src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/amber_cove1.jpg" alt="Amber Cove cruise port destination">
+                <div class="media-caption">Amber Cove</div>
+            </div>
+
+            <div class="media-card">
+                <img src="https://uploads.onecompiler.io/44rfm6cm7/44smqgbf9/San_Juan.jpg" alt="San Juan travel destination">
+                <div class="media-caption">San Juan</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="ml-embedded" data-form="HipPAf"></div>
+</main>
+
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top" aria-label="Scroll back to top of the page">
+    Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<hr class="main">
+
+<footer>
+    <div class="footer-socials" aria-label="Social media links">
+        <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
+        <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://instagram.com/alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+    </div>
+    <p>© 2026 Alpine Tide Travel<br>
+    Jason Reeves | Dallas, NC 28034</p>
+    <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
+    <p class="footer-notice">AlpineTideTravel is an independent agency associated with WorldVia Travel Network.</p>
+    <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Iowa 924, Washington 602864166 (UBI).</p>
+    <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruises. All other trademarks are the property of their respective owners.</p>
+    <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
+    <p id="currentTime" class="end"></p>
+    <div class="footer-logos">
+        <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Official graduate emblem badge for Carnival Cruise Line Diamond Level">
+        <img class="footer-logo footer-logo-right" src="https://www.worldviatravel.com/images/logo.png" alt="WorldVia Travel Network partner logo">
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
