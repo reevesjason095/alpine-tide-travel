@@ -15,7 +15,7 @@
     <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#023e8a; color:white; padding:8px; z-index:100; transition:top 0.2s;" onfocus="this.style.top='0px'" onblur="this.style.top='-40px'">Skip to main content</a>
 
     <div class="announcement-bar" role="text" aria-label="Network Announcement">
-        <div class="announcement-bar-track" id="countdownMarqueeText">Welcome to your next adventure!</div>
+        <div class="announcement-bar-track" id="countdownMarqueeText">We are now proud to partner with WorldVia Travel Network!</div>
     </div>
 
     <nav class="navbar" aria-label="Main Navigation">
@@ -45,7 +45,7 @@
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#blog-anchor">Blog</a></li>
         </ul>
     </nav>
 
@@ -64,7 +64,7 @@
             <form id="travelInquiryForm" name="general-inquiry" method="POST" action="/thankyou.html" data-netlify="true" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="general-inquiry">
                 <p class="hidden" style="display:none;">
-                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
                 </p>
 
                 <div class="form-group-row">
@@ -122,7 +122,7 @@
 
                 <div class="form-group">
                     <label for="message">Trip Goals & Specific Needs</label>
-                    <textarea id="message" name="message" rows="6" required placeholder="Tell us about the travelers, any specific environmental preferences, or sensory challenges we can manage for your family..."></textarea>
+                    <textarea id="message" name="message" rows="6" required placeholder="Tell us about the travelers, any specific environmental preferences, or sensory challenges we can manage for you..."></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn">Submit Request</button>
@@ -132,31 +132,15 @@
 
     <hr class="main">
 
-     <footer>
+    <footer>
         <div class="footer-socials" aria-label="Social media links">
-  <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel">
-    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-  </a>
-  <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
-    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-  </a>
-  <a href="https://instagram.com/alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
-    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-  </a>
-</div>
-        <p>© 2026 Alpine Tide Travel<br>
+            <a href="https://www.youtube.com/@alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/profile.php?id=61591444955166" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://instagram.com/alpinetidetravel" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <p>© 2026 AlpineTideTravel<br>
         Jason Reeves | Dallas, NC 28034</p>
         <p class="footer-contact">Contact: <a href="mailto:jasonreeves@alpinetidetravel.com">jasonreeves@alpinetidetravel.com</a></p>
-        <p class="footer-notice">AlpineTideTravel is an independent agency associated with WorldVia Travel Network.</p>
-        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Iowa 924, Washington 602864166 (UBI).</p>
-        <p class="footer-notice">Carnival® and the Carnival Diamond Expert logo are registered trademarks of Carnival Cruise Line. PRINCESS® and the Princess SeaWitch logo are registered trademarks of Princess Cruise Lines, Ltd. Used with permission.</p>
-        <p class="footer-links"><a href="terms.html">Terms and Conditions</a></p>
-        <p id="currentTime" class="end"></p>
-        <div class="footer-logos">
-            <img class="footer-logo footer-logo-left" src="https://cclrewards.com/images/Carnival-Expert-Diamond-Level-Graduate_logo.jpg" alt="Official graduate emblem badge for Carnival Cruise Line Diamond Level Expert Program">
-        </div>
-    </footer>
+        <p class="footer-notice">AlpineTideTravel is an independent agent of WorldVia Travel Network.</p>
+        <p class="footer-notice sot-disclosures">WorldVia Travel Network Registered Seller of Travel Numbers: California 2073234-00, Florida ST36257, Washington 602864166 (UBI).</p>
 
-    <script src="script.js"></script>
-</body>
-</html>
