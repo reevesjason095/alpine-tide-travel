@@ -20,14 +20,14 @@ body {
     text-align: left;
 }
 .ml-embedded {
-   width: 100% !important;
-   max-width: 450px !important;
-   height: auto !important;
-   margin: 0 auto !important;
-   padding-top: 15px !important;
-   padding-bottom: 15px !important;
-   box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 450px !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  padding: 15px 0 !important; /* Combines top/bottom and left/right padding */
+  box-sizing: border-box !important;
 }
+
 
 /* Sensory Update: Softened global image border weight and color */
 img {
