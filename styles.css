@@ -19,6 +19,14 @@ body {
     letter-spacing: 0.01em;
     text-align: left;
 }
+.ml-embedded {
+   width: 100%;
+   max-width: 450px;
+   height: auto;
+   margin: 0 auto;
+   padding 20px 25px;
+   box-sizing: border-box;
+}
 
 /* Sensory Update: Softened global image border weight and color */
 img {
