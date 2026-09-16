@@ -1,0 +1,8 @@
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+  [plugins.inputs]
+    # If you don't have a build step, your buildDir is likely "." or "public"
+    buildDir = "." 
+    exclude = [
+      "**/blog-template.html"
+    ]
