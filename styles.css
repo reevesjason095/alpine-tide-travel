@@ -78,11 +78,20 @@ img {
     max-width: 100%;
 }
 
-/* Consistent card sizing for gallery and destinations */
+/* Gallery grid sizing */
+.gallery-section .media-grid,
+.destinations-section .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
 .gallery-section .media-card,
 .destinations-section .media-card {
-    flex: 1 1 calc(50% - 12px);
-    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
 }
 
 /* Keep gallery images visible without clipping the full photo */
@@ -91,7 +100,7 @@ img {
     display: block;
     width: 100%;
     height: 280px;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     background: #f4f7f8;
     border-radius: 12px;
