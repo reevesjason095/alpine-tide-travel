@@ -78,6 +78,13 @@ img {
     max-width: 100%;
 }
 
+/* Consistent card sizing for gallery and destinations */
+.gallery-section .media-card,
+.destinations-section .media-card {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 200px;
+}
+
 /* Keep gallery images visible without clipping the full photo */
 .gallery-section .media-card img,
 .destinations-section .media-card img {
