@@ -1,6 +1,6 @@
 /* ==========================================================================
-   1. GLOBAL RESET & BASE STYLES
-   ========================================================================== */
+    1. GLOBAL RESET & BASE STYLES
+    ========================================================================== */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -21,7 +21,7 @@ body {
 }
  
 
-
+ 
 
 /* Sensory Update: Softened global image border weight and color */
 img {
@@ -76,6 +76,21 @@ img {
     display: block;
     width: 100%;
     max-width: 100%;
+}
+
+/* Optimize gallery image sizes */
+.gallery-section .media-card img,
+.destinations-section .media-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+.video-section .media-card iframe {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
 }
 
 .blog-section {
@@ -183,8 +198,8 @@ img {
 }
 
 /* ==========================================================================
-   2. NAVBAR STRUCTURE
-   ========================================================================== */
+    2. NAVBAR STRUCTURE
+    ========================================================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -248,8 +263,8 @@ img {
 }
 
 /* ==========================================================================
-   3. ANNOUNCEMENT BAR
-   ========================================================================== */
+    3. ANNOUNCEMENT BAR
+    ========================================================================== */
 /* Sensory Update: Replaced the loud multi-color gradient with a clean, calming solid shade */
 .announcement-bar {
     position: fixed;
@@ -275,8 +290,8 @@ img {
 }
 
 /* ==========================================================================
-   4. INTERACTIVE ELEMENTS & FORMS
-   ========================================================================== */
+    4. INTERACTIVE ELEMENTS & FORMS
+    ========================================================================== */
 /* Sensory Update: Softened global image border weight on footer elements */
 footer img,
 .footer img,
