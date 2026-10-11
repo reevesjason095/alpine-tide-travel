@@ -129,30 +129,29 @@
 
                 <!-- Custom niche field block: Accessibility & Sensory Profiling -->
                 <fieldset style="border: 2px solid #cfe8ee; border-radius: 12px; padding: 20px; margin-bottom: 24px; background: #ffffff;">
-                    <legend style="font-weight: bold; color: #023e8a; padding: 0 10px;">Sensory & Accessibility Requirements (Optional)</legend>
-                    <p style="margin-top: 0; font-size: 0.95rem; color: #555;">Select any features or accommodations that would make your trip safer and more comfortable:</p>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; text-align: left;">
-                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="accommodation[]" value="autism-certified" style="width: auto; margin: 0;"> Certified Autism Staff/Resorts
-                        </label>
-                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="accommodation[]" value="quiet-dining" style="width: auto; margin: 0;"> Low-Sensory/Quiet Dining
-                        </label>
-                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="accommodation[]" value="dietary-needs" style="width: auto; margin: 0;"> Special Dietary/GF/Allergies
-                        </label>
-                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="accommodation[]" value="mobility-access" style="width: auto; margin: 0;"> Physical Mobility/ADA Access
-                        </label>
-                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="accommodation[]" value="predictable-pacing" style="width: auto; margin: 0;"> Low-Crowd/Structured Pacing
-                        </label>
-                        <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                            <input type="checkbox" name="accommodation[]" value="sensory-room" style="width: auto; margin: 0;"> Quiet Spaces/Sensory Rooms
-                        </label>
-                    </div>
-                </fieldset>
+        <legend style="font-weight: bold; color: #023e8a; padding: 0 10px;">Sensory & Accessibility Requirements (Optional)</legend>
+        <p style="margin-top: 0; font-size: 0.95rem; color: #555;">Select any features or accommodations that would make your trip safer and more comfortable:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; text-align: left; margin-bottom: 16px;">
+            <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" name="req_autism_certified" value="yes" style="width: auto; margin: 0;"> Certified Autism Staff/Resorts
+            </label>
+            <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" name="req_quiet_dining" value="yes" style="width: auto; margin: 0;"> Low-Sensory/Quiet Dining
+            </label>
+            <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" name="req_dietary_needs" value="yes" style="width: auto; margin: 0;"> Special Dietary/GF/Allergies
+            </label>
+            <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" name="req_mobility_access" value="yes" style="width: auto; margin: 0;"> Physical Mobility/ADA Access
+            </label>
+            <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" name="req_predictable_pacing" value="yes" style="width: auto; margin: 0;"> Low-Crowd/Structured Pacing
+            </label>
+            <label style="font-weight: normal; margin: 0; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" name="req_sensory_room" value="yes" style="width: auto; margin: 0;"> Quiet Spaces/Sensory Rooms
+            </label>
+        </div>
 
                 <div class="form-group">
                     <label for="message">Trip Goals & Specific Needs</label>
