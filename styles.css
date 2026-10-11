@@ -78,16 +78,16 @@ img {
     max-width: 100%;
 }
 
-/* Preserve full image framing for gallery photos */
+/* Keep gallery images visible without clipping the full photo */
 .gallery-section .media-card img,
 .destinations-section .media-card img {
+    display: block;
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 350px;
+    height: 280px;
     object-fit: contain;
     object-position: center;
     background: #f4f7f8;
+    border-radius: 12px;
 }
 
 .video-section .media-card iframe {
